@@ -1,0 +1,488 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"python"
+
+Please check the spelling or version number. Also try "module spider ..."
+
+
+
+Start trimming
+../data/fastq/CON_1.fq.gz starts trimming nowwwwwww
+CON_1.fq.gz_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_1.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_1.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_1.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_1.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+Exception in thread "main" java.lang.AssertionError: File ../data/libs/CON_1.fq.gz_trimmed.fastq.gz exists and overwrite=false
+	at shared.Tools.testOutputFiles(Tools.java:939)
+	at jgi.BBDukF.<init>(BBDukF.java:797)
+	at jgi.BBDukF.main(BBDukF.java:67)
+../data/fastq/CON_2.fq.gz starts trimming nowwwwwww
+CON_2.fq.gz_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_2.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_2.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_2.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_2.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+Exception in thread "main" java.lang.AssertionError: File ../data/libs/CON_2.fq.gz_trimmed.fastq.gz exists and overwrite=false
+	at shared.Tools.testOutputFiles(Tools.java:939)
+	at jgi.BBDukF.<init>(BBDukF.java:797)
+	at jgi.BBDukF.main(BBDukF.java:67)
+../data/fastq/PNA_1.fq.gz starts trimming nowwwwwww
+PNA_1.fq.gz_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_1.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_1.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+Exception in thread "main" java.lang.AssertionError: File ../data/libs/PNA_1.fq.gz_trimmed.fastq.gz exists and overwrite=false
+	at shared.Tools.testOutputFiles(Tools.java:939)
+	at jgi.BBDukF.<init>(BBDukF.java:797)
+	at jgi.BBDukF.main(BBDukF.java:67)
+../data/fastq/PNA_2.fq.gz starts trimming nowwwwwww
+PNA_2.fq.gz_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_2.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_2.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+Exception in thread "main" java.lang.AssertionError: File ../data/libs/PNA_2.fq.gz_trimmed.fastq.gz exists and overwrite=false
+	at shared.Tools.testOutputFiles(Tools.java:939)
+	at jgi.BBDukF.<init>(BBDukF.java:797)
+	at jgi.BBDukF.main(BBDukF.java:67)
+Trimming done. Start mapping
+Starting mapping for sample: CON_1.fq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_1.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/CON_1.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_1.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/p_copri_wplasmids.fasta, k=12, outm=../data/rna_align/CON_1.fq.gz.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.045 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.221 seconds.
+Analyzed Index:   	0.724 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.116 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	6720536	(456814721 bases)
+
+Mapping:          	118.964 seconds.
+Reads/sec:       	56492.15
+kBases/sec:      	3839.94
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 77.6383% 	  5217707 	 86.9117% 	   397025538
+unambiguous:     	 71.5653% 	  4809570 	 81.1851% 	   370865625
+ambiguous:       	  6.0730% 	   408137 	  5.7266% 	    26159913
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 30.5815% 	  2055241 	 38.8074% 	   177277905
+semiperfect site:	 30.5816% 	  2055246 	 38.8075% 	   177278238
+
+Match Rate:      	      NA 	       NA 	 93.7415% 	   388260079
+Error Rate:      	 56.8414% 	  3162451 	  6.2585% 	    25921471
+Sub Rate:        	 51.4439% 	  2862154 	  1.8846% 	     7805830
+Del Rate:        	  6.0690% 	   337659 	  4.1422% 	    17156149
+Ins Rate:        	 11.2941% 	   628366 	  0.2317% 	      959492
+N Rate:          	  0.0013% 	       72 	  0.0000% 	         137
+
+Total time:     	120.180 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: CON_2.fq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/CON_2.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_2.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/p_copri_wplasmids.fasta, k=12, outm=../data/rna_align/CON_2.fq.gz.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.044 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.205 seconds.
+Analyzed Index:   	0.731 seconds.
+Started output stream:	0.049 seconds.
+Cleared Memory:    	0.117 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12516677	(885892190 bases)
+
+Mapping:          	221.278 seconds.
+Reads/sec:       	56565.27
+kBases/sec:      	4003.52
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 80.1496% 	 10032070 	 87.8578% 	   778325262
+unambiguous:     	 73.8194% 	  9239739 	 81.9383% 	   725884708
+ambiguous:       	  6.3302% 	   792331 	  5.9195% 	    52440554
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 33.3304% 	  4171862 	 41.0071% 	   363278610
+semiperfect site:	 33.3306% 	  4171880 	 41.0072% 	   363279998
+
+Match Rate:      	      NA 	       NA 	 93.6212% 	   762103087
+Error Rate:      	 55.3643% 	  5860190 	  6.3787% 	    51924779
+Sub Rate:        	 49.7652% 	  5267533 	  1.7633% 	    14353736
+Del Rate:        	  5.9508% 	   629884 	  4.3860% 	    35702889
+Ins Rate:        	 11.4157% 	  1208325 	  0.2295% 	     1868154
+N Rate:          	  0.0007% 	       79 	  0.0000% 	         285
+
+Total time:     	222.511 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_1.fq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/PNA_1.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/p_copri_wplasmids.fasta, k=12, outm=../data/rna_align/PNA_1.fq.gz.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.044 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.210 seconds.
+Analyzed Index:   	0.716 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.116 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	15235889	(850029876 bases)
+
+Mapping:          	204.403 seconds.
+Reads/sec:       	74538.54
+kBases/sec:      	4158.60
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 51.3230% 	  7819516 	 67.3727% 	   572687898
+unambiguous:     	 45.0390% 	  6862086 	 60.5964% 	   515087487
+ambiguous:       	  6.2840% 	   957430 	  6.7763% 	    57600411
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 19.4163% 	  2958242 	 29.5287% 	   251002818
+semiperfect site:	 19.4164% 	  2958264 	 29.5289% 	   251004652
+
+Match Rate:      	      NA 	       NA 	 93.5093% 	   559357410
+Error Rate:      	 51.1262% 	  4861261 	  6.4907% 	    38826303
+Sub Rate:        	 46.4991% 	  4421299 	  1.9913% 	    11911417
+Del Rate:        	  4.9347% 	   469212 	  4.2622% 	    25496007
+Ins Rate:        	  9.8021% 	   932017 	  0.2372% 	     1418879
+N Rate:          	  0.0007% 	       65 	  0.0000% 	         192
+
+Total time:     	205.601 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_2.fq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/PNA_2.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/p_copri_wplasmids.fasta, k=12, outm=../data/rna_align/PNA_2.fq.gz.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.043 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.218 seconds.
+Analyzed Index:   	0.711 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.109 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	6042505	(406156420 bases)
+
+Mapping:          	111.694 seconds.
+Reads/sec:       	54098.90
+kBases/sec:      	3636.34
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 70.0703% 	  4234000 	 79.8863% 	   324463429
+unambiguous:     	 59.8392% 	  3615786 	 69.2151% 	   281121585
+ambiguous:       	 10.2311% 	   618214 	 10.6712% 	    43341844
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 28.8833% 	  1745275 	 37.0356% 	   150422542
+semiperfect site:	 28.8834% 	  1745283 	 37.0357% 	   150423018
+
+Match Rate:      	      NA 	       NA 	 93.5103% 	   317572578
+Error Rate:      	 54.0295% 	  2488705 	  6.4897% 	    22039726
+Sub Rate:        	 48.8619% 	  2250675 	  1.8021% 	     6120023
+Del Rate:        	  5.6132% 	   258554 	  4.4607% 	    15149047
+Ins Rate:        	 10.8233% 	   498543 	  0.2269% 	      770656
+N Rate:          	  0.0014% 	       64 	  0.0001% 	         172
+
+Total time:     	112.888 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Finished mapping. Start connecting all tab files
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 4 BAM files                                      ||
+||                           o CON_1.fq.gz.bam                                ||
+||                           o CON_2.fq.gz.bam                                ||
+||                           o PNA_1.fq.gz.bam                                ||
+||                           o PNA_2.fq.gz.bam                                ||
+||                                                                            ||
+||             Output file : counttable.txt                                   ||
+||                 Summary : counttable.txt.summary                           ||
+||              Annotation : p_copri_wplasmids.gff3 (GTF)                     ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file p_copri_wplasmids.gff3 ...                            ||
+||    Features : 2913                                                         ||
+||    Meta-features : 2913                                                    ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file CON_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5217707                                              ||
+||    Successfully assigned alignments : 4523047 (86.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10032070                                             ||
+||    Successfully assigned alignments : 8611934 (85.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7819516                                              ||
+||    Successfully assigned alignments : 6389678 (81.7%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4234000                                              ||
+||    Successfully assigned alignments : 3372555 (79.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/count  ||
+|| table.txt.summary"                                                         ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 4 BAM files                                      ||
+||                           o CON_1.fq.gz.bam                                ||
+||                           o CON_2.fq.gz.bam                                ||
+||                           o PNA_1.fq.gz.bam                                ||
+||                           o PNA_2.fq.gz.bam                                ||
+||                                                                            ||
+||             Output file : rRNA_counttable.txt                              ||
+||                 Summary : rRNA_counttable.txt.summary                      ||
+||              Annotation : p_copri_wplasmids.gff3 (GTF)                     ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file p_copri_wplasmids.gff3 ...                            ||
+||    Features : 18                                                           ||
+||    Meta-features : 18                                                      ||
+||    Chromosomes/contigs : 2                                                 ||
+||                                                                            ||
+|| Process BAM file CON_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5217707                                              ||
+||    Successfully assigned alignments : 317394 (6.1%)                        ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10032070                                             ||
+||    Successfully assigned alignments : 636612 (6.3%)                        ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7819516                                              ||
+||    Successfully assigned alignments : 679369 (8.7%)                        ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4234000                                              ||
+||    Successfully assigned alignments : 544783 (12.9%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/rRNA_  ||
+|| counttable.txt.summary"                                                    ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 4 BAM files                                      ||
+||                           o CON_1.fq.gz.bam                                ||
+||                           o CON_2.fq.gz.bam                                ||
+||                           o PNA_1.fq.gz.bam                                ||
+||                           o PNA_2.fq.gz.bam                                ||
+||                                                                            ||
+||             Output file : tRNA_counttable.txt                              ||
+||                 Summary : tRNA_counttable.txt.summary                      ||
+||              Annotation : p_copri_wplasmids.gff3 (GTF)                     ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file p_copri_wplasmids.gff3 ...                            ||
+||    Features : 61                                                           ||
+||    Meta-features : 61                                                      ||
+||    Chromosomes/contigs : 1                                                 ||
+||                                                                            ||
+|| Process BAM file CON_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5217707                                              ||
+||    Successfully assigned alignments : 7731 (0.1%)                          ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10032070                                             ||
+||    Successfully assigned alignments : 17118 (0.2%)                         ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_1.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7819516                                              ||
+||    Successfully assigned alignments : 11836 (0.2%)                         ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2.fq.gz.bam...                                        ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4234000                                              ||
+||    Successfully assigned alignments : 4256 (0.1%)                          ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/tRNA_  ||
+|| counttable.txt.summary"                                                    ||
+||                                                                            ||
+\\============================================================================//
+
