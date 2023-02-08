@@ -1,0 +1,13 @@
+#Summary
+#Generated on	Tue Feb 07 13:38:32 UTC 2023
+#Version	5
+chroms	1
+bases	3568214
+defined	3551614
+undefined	16600
+contigs	3
+scaffolds	3
+interpad	300
+source	/home/jakob_jung/pna_prevotella_cpp_2023_01/data/reference_sequences/p_copri_wplasmids.fasta
+bytes	3602645
+last modified	1675766888237

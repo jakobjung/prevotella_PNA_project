@@ -1,0 +1,102 @@
+ERROR: Unable to locate a modulefile for 'python'
+/var/spool/slurmd/job96331/slurm_script: line 10: activate: No such file or directory
+Start trimming
+../data/fastq/CON_1.fq.gz starts trimming nowwwwwww
+CON_1.fq.gz_trimmed.fastq.gz
+/usr/bin/bbduk.sh: line 344: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbduk.sh: line 345: setEnvironment: command not found
+/usr/bin/bbduk.sh: line 346: parseXmx: command not found
+/usr/bin/bbduk.sh: line 350: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar jgi.BBDuk in=../data/fastq/CON_1.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_1.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+../data/fastq/CON_2.fq.gz starts trimming nowwwwwww
+CON_2.fq.gz_trimmed.fastq.gz
+/usr/bin/bbduk.sh: line 344: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbduk.sh: line 345: setEnvironment: command not found
+/usr/bin/bbduk.sh: line 346: parseXmx: command not found
+/usr/bin/bbduk.sh: line 350: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar jgi.BBDuk in=../data/fastq/CON_2.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_2.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+../data/fastq/PNA_1.fq.gz starts trimming nowwwwwww
+PNA_1.fq.gz_trimmed.fastq.gz
+/usr/bin/bbduk.sh: line 344: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbduk.sh: line 345: setEnvironment: command not found
+/usr/bin/bbduk.sh: line 346: parseXmx: command not found
+/usr/bin/bbduk.sh: line 350: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar jgi.BBDuk in=../data/fastq/PNA_1.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+../data/fastq/PNA_2.fq.gz starts trimming nowwwwwww
+PNA_2.fq.gz_trimmed.fastq.gz
+/usr/bin/bbduk.sh: line 344: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbduk.sh: line 345: setEnvironment: command not found
+/usr/bin/bbduk.sh: line 346: parseXmx: command not found
+/usr/bin/bbduk.sh: line 350: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar jgi.BBDuk in=../data/fastq/PNA_2.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Trimming done. Start mapping
+Starting mapping for sample: CON_1.fq.gz
+/usr/bin/bbmap.sh: line 338: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbmap.sh: line 339: setEnvironment: command not found
+/usr/bin/bbmap.sh: line 340: parseXmx: command not found
+/usr/bin/bbmap.sh: line 344: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_1.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/CON_1.fq.gz.sam
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[E::hts_open_format] Failed to open file "../data/rna_align/CON_1.fq.gz.sam" : No such file or directory
+samtools sort: can't open "../data/rna_align/CON_1.fq.gz.sam": No such file or directory
+rm: cannot remove '../data/rna_align/CON_1.fq.gz.sam': No such file or directory
+Starting mapping for sample: CON_2.fq.gz
+/usr/bin/bbmap.sh: line 338: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbmap.sh: line 339: setEnvironment: command not found
+/usr/bin/bbmap.sh: line 340: parseXmx: command not found
+/usr/bin/bbmap.sh: line 344: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/CON_2.fq.gz.sam
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[E::hts_open_format] Failed to open file "../data/rna_align/CON_2.fq.gz.sam" : No such file or directory
+samtools sort: can't open "../data/rna_align/CON_2.fq.gz.sam": No such file or directory
+rm: cannot remove '../data/rna_align/CON_2.fq.gz.sam': No such file or directory
+Starting mapping for sample: PNA_1.fq.gz
+/usr/bin/bbmap.sh: line 338: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbmap.sh: line 339: setEnvironment: command not found
+/usr/bin/bbmap.sh: line 340: parseXmx: command not found
+/usr/bin/bbmap.sh: line 344: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_1.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/PNA_1.fq.gz.sam
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[E::hts_open_format] Failed to open file "../data/rna_align/PNA_1.fq.gz.sam" : No such file or directory
+samtools sort: can't open "../data/rna_align/PNA_1.fq.gz.sam": No such file or directory
+rm: cannot remove '../data/rna_align/PNA_1.fq.gz.sam': No such file or directory
+Starting mapping for sample: PNA_2.fq.gz
+/usr/bin/bbmap.sh: line 338: /usr/share/bbmap/calcmem: No such file or directory
+/usr/bin/bbmap.sh: line 339: setEnvironment: command not found
+/usr/bin/bbmap.sh: line 340: parseXmx: command not found
+/usr/bin/bbmap.sh: line 344: freeRam: command not found
+java -Xmxm -Xmsm -cp /usr/share/java/bbmap.jar align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/p_copri_wplasmids.fasta k=12 outm=../data/rna_align/PNA_2.fq.gz.sam
+Invalid maximum heap size: -Xmxm
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[E::hts_open_format] Failed to open file "../data/rna_align/PNA_2.fq.gz.sam" : No such file or directory
+samtools sort: can't open "../data/rna_align/PNA_2.fq.gz.sam": No such file or directory
+rm: cannot remove '../data/rna_align/PNA_2.fq.gz.sam': No such file or directory
+Finished mapping. Start connecting all tab files
+
+ERROR: invalid parameter: '../data/rna_align/CON_1.fq.gz.bam'
+
+
+ERROR: invalid parameter: '../data/rna_align/CON_1.fq.gz.bam'
+
+
+ERROR: invalid parameter: '../data/rna_align/CON_1.fq.gz.bam'
+

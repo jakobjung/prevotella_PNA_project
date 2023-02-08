@@ -1,0 +1,15 @@
+Status	../data/rna_align/CON_1.fq.gz.bam	../data/rna_align/CON_2.fq.gz.bam	../data/rna_align/PNA_1.fq.gz.bam	../data/rna_align/PNA_2.fq.gz.bam
+Assigned	4523047	8611934	6389678	3372555
+Unassigned_Unmapped	0	0	0	0
+Unassigned_Read_Type	0	0	0	0
+Unassigned_Singleton	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0
+Unassigned_Chimera	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0
+Unassigned_Duplicate	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0
+Unassigned_Secondary	0	0	0	0
+Unassigned_NonSplit	0	0	0	0
+Unassigned_NoFeatures	553061	1127521	1273044	772282
+Unassigned_Overlapping_Length	0	0	0	0
+Unassigned_Ambiguity	141599	292615	156794	89163

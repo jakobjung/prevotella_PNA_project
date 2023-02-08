@@ -1,0 +1,15 @@
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx406580m -Xms406580m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_1.fq.gz ref=../data/reference_sequences/adapters.fa t=20 out=../data/libs/CON_1.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_1.fq.gz, ref=../data/reference_sequences/adapters.fa, t=20, out=../data/libs/CON_1.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.144 seconds.
+Initial:
+Memory: max=426342m, total=426342m, free=426258m, used=84m
+
+Added 217135 kmers; time: 	0.352 seconds.
+Memory: max=426342m, total=426342m, free=426090m, used=252m
+
+Input is being processed as unpaired
+Started output streams:	0.062 seconds.
