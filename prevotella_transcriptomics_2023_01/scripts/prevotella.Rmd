@@ -1,0 +1,843 @@
+---
+title: "Prevotella project"
+author: "Jakob Jung"
+date: "03/02/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Packages:
+```{r, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(ggrepel)
+library(tidyr)
+library(edgeR)
+library(ggpubr)
+library(readr)
+library(viridis)
+library(MetBrewer)
+library(RColorBrewer)
+library(BiocGenerics)
+library('RUVSeq')
+library(ComplexHeatmap)
+```
+
+
+# Mapping statistics
+
+## percentages of mapped read types
+Here I show the distribution of different reads (oligos, rRNA, tRNA) to get an idea on how the rRNA depletion worked out.
+First I import total counts per rRNA, mRNA and tRNA and look at the total counts of our ologos:
+```{r}
+cds_counts <- unlist(read.delim("../data/rna_align/counttable.txt.summary", 
+                                      row.names = 1)[1,])
+rrna_counts <- unlist(read.delim("../data/rna_align/rRNA_counttable.txt.summary", 
+                                    row.names = 1)[1,])
+trna_counts <- unlist(read.delim("../data/rna_align/tRNA_counttable.txt.summary", 
+                                    row.names = 1)[1,])
+```
+
+Now I create a dataframe and plot a stacked barplot of the data: 
+```{r}
+df_rnatypes <- data.frame(
+  rna_type = c(rep("rRNA", length(rrna_counts)), 
+               rep("tRNA", length(trna_counts)),
+               rep("mRNA", length(cds_counts))),
+  counts = c(rrna_counts,  trna_counts, cds_counts), 
+  sample = rep(names(rrna_counts), 3)
+)
+
+df_rnatypes$sample <- gsub(".*.rna_align\\.(.+)\\.fq\\.gz\\.bam", "\\1", df_rnatypes$sample)
+df_rnatypes$condition <- gsub("(.+_\\d+)_\\d", "\\1", df_rnatypes$sample)
+df_rnatypes <- df_rnatypes[order(df_rnatypes$sample),]
+df_rnatypes$norm_fac <- ave(df_rnatypes$counts, df_rnatypes$sample, FUN=sum) / 10000000
+df_rnatypes$cpm_counts <- df_rnatypes$counts / df_rnatypes$norm_fac
+df_rnatypes$rna_type <- factor(df_rnatypes$rna_type, levels = c("tRNA", "rRNA", "mRNA"))
+
+write_csv(df_rnatypes, "../analysis/rna_types/rna_types.csv")
+
+g <- ggplot(df_rnatypes) + 
+  aes(x = sample, y = counts, fill = rna_type) + 
+  geom_bar(stat = "identity", position = "stack") + 
+  scale_fill_manual(values = met.brewer("Hokusai3")[c(1,3,5)]) + 
+  theme_pubr() +
+  scale_y_continuous(labels = scales::unit_format(unit = "", scale = 1e-6), name = "reads (in million)",
+                     breaks = seq(0,10000000, by = 1000000)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))
+
+g
+ggsave("../analysis/rna_types/rnatypes_new.svg", plot = g, width = 15, height=6)
+ggsave("../analysis/rna_types/rnatypes_new.png", plot = g, width = 15, height = 6)
+```
+
+## Data import
+I start with importing count data (genewisecounts):
+```{r}
+# import:
+GenewiseCounts <- read.delim(
+    "../data/rna_align/counttable.txt",
+    sep = "\t", row.names = 1, header = T, comment.char = "#")
+dim(GenewiseCounts)
+head(GenewiseCounts[,1:6])
+```
+
+I have to change column names, since they include the whole path:
+```{r}
+gwc <- GenewiseCounts[,5:length(GenewiseCounts[1,])]
+pnapat <- ".*.rna_align\\.(.+)\\.fq\\.gz\\.bam"
+```
+
+save table with tpm normalized values for controls
+```{r}
+colnames(gwc) <- gsub(pnapat,"\\1", colnames(gwc))
+# select controls:
+gene_lengths <- gwc$Length
+raw_counts <- gwc[,-1]
+norm_length <- data.frame(sapply(raw_counts, function(x) x / gene_lengths))
+tpm_matrix <- data.frame(sapply(norm_length, function(x) x * 1e6 / sum(x)), row.names = rownames(raw_counts))
+pairs(log(tpm_matrix[,1:10]))
+
+write.csv(tpm_matrix[,1:10], "../analysis/raw_counts_TPM.csv", row.names = T)
+
+svg("../analysis/pairs.svg")
+pairs(log(tpm_matrix[,c(1,2,3,5,23,24,32,33,36,38,39,41,42)]))
+dev.off()
+
+svg("../analysis/correlationplot.svg", width = 15, height=15)
+corrplot::corrplot(cor(tpm_matrix[,],method = "spearman"))
+dev.off()
+```
+The control samples correlated better with each other than with the controls, which makes sense.
+
+
+```{r}
+gwc_n <- gwc[, grepl("CON_0|Lengt", colnames(gwc))]
+raw_gwc <- data.frame(length=gwc_n$Length, counts=rowMeans(gwc_n[,-1]))
+
+gwcnorm_length <- data.frame(sapply(gwc_n[,-1], function(x) x / (gwc[,1]/1000)))
+gwc_tpm <- data.frame(Length = gwc_n$Length, 
+                      sapply(gwcnorm_length, function(x) x * 1e6 / sum(x)), row.names = rownames(gwc_n))
+gwc_tpm[, grepl("(control)|(Length)", colnames(gwc_tpm))]
+tpm <- data.frame(length=gwc_tpm$Length, counts=rowMeans(gwc_tpm[,-1]))
+
+lpt <- tpm %>% ggplot(aes(x=length, y=log10(counts+1))) + geom_point() + 
+  scale_x_continuous(limits = c(0,1000)) + scale_y_continuous(limits = c(0,5)) + theme_minimal()
+
+lpr <- raw_gwc %>% ggplot(aes(x=length, y=log10(counts+1))) + geom_point() + 
+  scale_x_continuous(limits = c(0,1000)) + scale_y_continuous(limits = c(-0.5,5)) + theme_minimal() +
+  geom_text_repel(aes( label=ifelse(length<80, rownames(raw_gwc), "")), size=2.5, max.overlaps = 15)
+
+svg("../analysis/coverage_etc/length_plot_raw.svg")
+print(lpr)
+dev.off()
+svg("../analysis/coverage_etc/length_plot_tpm_norm.svg")
+print(lpt)
+dev.off()
+```
+We can see that TPM normalization already works to take away the gene length's effects on read depth.
+
+I also create a factor variable for groups of the sample data per condition:
+```{r}
+test <- as.factor(gsub("_\\d$", "",colnames(gwc)[-1]))
+test
+```
+
+
+# DE analysis *Prevotella* PNAs
+
+Now that I have the read count dataframe with sample names, I import them into the edgeR environment:
+```{r}
+y <- DGEList(gwc[,-1], group = test, genes = gwc[,1,drop=FALSE])
+options(digits = 3)
+head(y$samples)
+```
+
+## Filtering
+Now I want to filter out Genes which have very low counts across all libraries. 
+I do this by creating a cutoff $$\frac {10} {L} $$
+where L is the minimum library size in millions. We delete genes that are below the cutoff in at least 2 libraries:
+```{r}
+L <- min(y$samples$lib.size) / 1000000
+cutoff <- 10
+keep <- rowSums(cpm(y) > cutoff) >= 3
+table(keep)
+```
+I retain only the unfiltered genes,and delete 519 genes below the threshold:
+```{r}
+y <- y[keep, , keep.lib.sizes=FALSE]
+```
+
+
+# Design matrix
+I create a design matrix for the samples:
+```{r}
+batches = as.factor(gsub(".*_(\\d)$", "\\1", colnames(y)))
+
+design <- model.matrix(~0+test)
+colnames(design) <- c(levels(test))
+rownames(design) <- colnames(y$counts)
+design
+```
+
+
+## TMM normalization
+
+I check how the standard TMM normalization of edgeR performs. I start with calculating normalization factors:
+```{r, error=FALSE}
+y <- calcNormFactors(y)
+y <- estimateDisp(y, design, robust = T)
+```
+
+And now I create PCA and RLE plots:
+```{r}
+mycolors <- c(cividis(7)[2:6], inferno(7)[2:6], mako(8)[3:7])
+              #met.brewer("VanGogh3", direction = -1)[c(1, 3,4, 5, 7)])
+plotPCA(cpm(y), col=mycolors[test])
+plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[test],
+        main="RLE", las=2)
+
+# save em as svgs
+svg("../analysis/PCA.svg")
+plotPCA(cpm(y), col=mycolors[test])
+dev.off()
+
+png("../analysis/PCA.png")
+plotPCA(cpm(y), col=mycolors[test])
+dev.off()
+svg("../analysis/RLE_allsamples.svg")
+plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[test],
+        main="RLE", las=2)
+dev.off()
+```
+
+## RUVs analysis:
+You can see that the TMM was succesful (TMM centers the RLE around 0) but there is a slight batch effect. so we try to run RUVSeq on only batch effects: 
+```{r}
+set <- newSeqExpressionSet(as.matrix(y$counts), 
+                           phenoData = data.frame(test, row.names=colnames(y$counts)))
+set <- betweenLaneNormalization(set, which="upper")
+
+plotRLE(set, outline=FALSE, col=mycolors[test])
+plotPCA(set, col=mycolors[test], cex=1.2)
+```
+
+Now we do RUVs and create RLE and PCA plots again. We look at the plots for all different k using a loop (output not shown here):
+
+```{r, echo=T, results = 'hide'}
+for (k in 1:10) {   
+      par(mfrow=c(1,2))
+      set_RUVs <- RUVs(set, k=k, rownames(y), makeGroups(test))
+      plotRLE(set_RUVs, outline=FALSE, ylim=c(-1, 1), col=mycolors[test],
+             main=paste(c("k = ", k)))
+      plotPCA(set_RUVs, col=mycolors[test], cex=1.2, main=paste(c("k = ", k)))
+}
+
+```
+
+And now I create PCA and RLE plots in a nicer way:
+```{r}
+colors <- mycolors
+set_RUVs <- RUVs(set, k=5, rownames(y), makeGroups(test))
+
+logCPM <- cpm(y, log=TRUE, prior.count=2) 
+logCPM_no_batch <- log(normCounts(set_RUVs)+1)
+
+# PCA:
+pcasample <- t(logCPM_no_batch)
+
+
+pca <- prcomp(pcasample)
+df_pca <- as.data.frame(pca$x)
+
+theme<-theme(panel.background = element_blank(),panel.border=element_rect(fill=NA),
+             panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+             strip.background=element_blank(),
+             axis.text=element_text(colour="black", size=12),axis.ticks=element_line(colour="black"),
+             axis.title=element_text(colour="black", size=13),
+             plot.margin=unit(c(1,1,1,1),"line"),legend.position = "none")
+
+percentage <- round(pca$sdev / sum(pca$sdev) * 100, 2)
+percentage <- paste( colnames(df_pca), "(", paste( as.character(percentage), "%", ")", sep="") )
+
+df_pca$group <-test
+
+p<-ggplot(df_pca,aes(x=PC1,y=PC2,group=group,label=rownames(df_pca), colour=group))
+p<-p+geom_point(size=3)+ scale_shape_identity()+
+  geom_text_repel(size=4, min.segment.length = 0, seed = 42, box.padding = 0.5, max.overlaps = 20)+
+  theme + xlab(percentage[1]) + 
+  ggtitle("After removal of batch-effects")+
+  ylab(percentage[2])+ scale_color_manual(values = mycolors)
+p
+
+#for unnormalized stuff:
+pca_unnorm <- prcomp(t(logCPM))
+df_pca_unnorm <- as.data.frame(pca_unnorm$x)
+percentage_unnorm <- round(pca_unnorm$sdev / sum(pca_unnorm$sdev) * 100, 2)
+percentage_unnorm <- paste( colnames(df_pca_unnorm), 
+                            "(", paste( as.character(percentage_unnorm), "%", ")", sep="") )
+df_pca_unnorm$group <-test
+
+
+p_unnorm<-ggplot(df_pca_unnorm,aes(x=PC1,y=PC2,group=group,label=rownames(df_pca), colour=group))
+p_unnorm<-p_unnorm+geom_point(size=3)+ scale_shape_identity()+
+  geom_text_repel(size=4, min.segment.length = 0, seed = 42, box.padding = 0.5, max.overlaps = 20)+
+  ggtitle("TMM normalized")+
+  theme + xlab(percentage_unnorm[1]) + ylab(percentage_unnorm[2])+ scale_color_manual(values = mycolors)
+
+p_unnorm_norm <- ggarrange(p_unnorm, p, ncol = 2, labels = c("A","B"))
+
+# save pca as svg
+svg("../analysis/PCA.svg", width = 14)
+p_unnorm_norm
+dev.off()
+
+```
+
+## DE analysis 
+I chose RUVs k=5 as the PCA looks better here.
+
+Now that I have the read count dataframe with sample names, I import them into the edgeR environment:
+```{r}
+
+# save em as svgs
+svg("../analysis/PCA_RUV_allsamples.svg")
+plotPCA(set_RUVs, col=colors[test], cex=1.2)
+dev.off()
+svg("../analysis/RLE_RUV_allsamples.svg")
+plotRLE(set_RUVs, outline=FALSE, ylim=c(-1, 1), col=colors[test])
+dev.off()
+
+y <- DGEList(counts=counts(set_RUVs), group=test)
+options(digits = 3)
+head(y$samples)
+
+
+# new design matrix:
+design <- model.matrix(~0+test+W_1+W_2+W_3+W_4+W_5, data=pData(set_RUVs))
+colnames(design) <- c(levels(test), "W_1", "W_2", "W_3", "W_4", "W_5")
+rownames(design) <- colnames(y$counts)
+
+y <- calcNormFactors(y)
+y <- estimateDisp(y, design, robust = T)
+```
+
+```{r}
+con <- makeContrasts(PNA_10_vs_PNA_0 = PNA_10 - PNA_0,
+                     PNA_20_vs_PNA_0 = PNA_20 - PNA_0,
+                     PNA_30_vs_PNA_0 = PNA_30 - PNA_0,
+                     PNA_60_vs_PNA_0 = PNA_60 - PNA_0,
+                     PNA_10_vs_CON_10 = PNA_10 - CON_10,
+                     PNA_20_vs_CON_20 = PNA_20 - CON_20,
+                     PNA_30_vs_CON_30 = PNA_30 - CON_30,
+                     PNA_60_vs_CON_60 = PNA_60 - CON_60,
+                     PNA_10_vs_SCR_10 = PNA_10 - SCR_10,
+                     PNA_20_vs_SCR_20 = PNA_20 - SCR_20,
+                     PNA_30_vs_SCR_30 = PNA_30 - SCR_30,
+                     PNA_60_vs_SCR_60 = PNA_60 - SCR_60,
+                     PNA_0_vs_SCR_0 = PNA_0 - SCR_0,
+                     PNA_0_vs_CON_0 = PNA_0 - CON_0,
+                     levels = design)
+
+fit <- glmQLFit(y, design, robust = TRUE)
+
+all_res <- list(PNA_10_vs_PNA_0 = glmQLFTest(fit, contrast = con[,1]),
+                PNA_20_vs_PNA_0 = glmQLFTest(fit, contrast = con[,2]),
+                PNA_30_vs_PNA_0 = glmQLFTest(fit, contrast = con[,3]),
+                PNA_60_vs_PNA_0 = glmQLFTest(fit, contrast = con[,4]),
+                PNA_10_vs_CON_10 = glmQLFTest(fit, contrast = con[,5]),
+                PNA_20_vs_CON_20 = glmQLFTest(fit, contrast = con[,6]),
+                PNA_30_vs_CON_30 = glmQLFTest(fit, contrast = con[,7]),
+                PNA_60_vs_CON_60 = glmQLFTest(fit, contrast = con[,8]),
+                PNA_10_vs_SCR_10 = glmQLFTest(fit, contrast = con[,9]),
+                PNA_20_vs_SCR_20 = glmQLFTest(fit, contrast = con[,10]),
+                PNA_30_vs_SCR_30 = glmQLFTest(fit, contrast = con[,11]),
+                PNA_60_vs_SCR_60 = glmQLFTest(fit, contrast = con[,12]),
+                PNA_0_vs_SCR_0 = glmQLFTest(fit, contrast = con[,13]),
+                PNA_0_vs_CON_0 = glmQLFTest(fit, contrast = con[,14]))
+
+
+res_pna_scr <- list(PNA_0_vs_SCR_0 = glmQLFTest(fit, contrast = con[,13]),
+                    PNA_10_vs_SCR_10 = glmQLFTest(fit, contrast = con[,9]),
+                    PNA_20_vs_SCR_20 = glmQLFTest(fit, contrast = con[,10]),
+                    PNA_30_vs_SCR_30 = glmQLFTest(fit, contrast = con[,11]),
+                    PNA_60_vs_SCR_60 = glmQLFTest(fit, contrast = con[,12]))
+```
+
+
+We now create MD, BCV and QLDisp plots to access qualiy of data:
+```{r}
+plotMD(y, main = "MD-plot")
+abline(h=0, col="red", lty=2, lwd=2)
+plotBCV(y)
+plotQLDisp(fit)
+```
+
+
+Now I create a function which makes nice volcano-plots and run it on all the results (all PNA-samples are compared to water control for DE):
+```{r}
+do_volcano <- function(restab,  pointsize = 2, x_limit = F,y_limit=F, show_sig = F, alpha=0.05, tgene =NULL,tgene_names=NULL,
+                       minlogfc=1, title = "Volcano", off_target_list = NULL, phopq = NULL) {
+  
+  g = ggplot(restab) +
+  geom_point(
+    data = restab,
+    aes(x = logFC, y = -log10(FDR)),
+    color = "darkgrey",
+    cex = pointsize
+  ) + theme_bw()+ # change theme to standard black&wite.
+  geom_hline(yintercept = -log10(alpha),
+             color = "black", linetype = 3) +
+ # geom_vline(xintercept = c(-minlogfc,minlogfc),
+  #           color = "black", linetype = 3) +
+  theme(axis.title.x = element_text(size=20),
+        axis.title.y = element_text(size=20),
+        axis.text = element_text(size=15, colour = "black"),
+        panel.background = element_rect(colour = "black"),
+        axis.line = element_line(colour = "black"),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x =  element_blank(),#element_line(colour="lightgrey", size=0.3),
+        panel.grid.major.y = element_blank(),#element_line(colour="lightgrey", size=0.3),
+        plot.title = element_text(hjust = 0.5, size = 23))+
+  ggtitle(title)+
+  xlab(expression("log"[2]*" fold change")) +
+  ylab(expression("- log"[10]*" P-value (FDR)"))+
+  scale_x_continuous(expand = c(0,0),breaks = seq(-6,6,2), limits = c(-x_limit,x_limit)) +
+  scale_y_continuous(expand = c(0, 0),breaks = seq(0,26,2), limits = c(0,y_limit)) 
+  
+  if (!is.null(phopq)) {
+    g <- g + geom_point(
+        data = restab[restab$genes %in% phopq,],
+        aes(x = logFC, y = -log10(FDR), bg = "PhoPQ"),
+        cex = pointsize, pch=21)
+  }  
+  
+
+  g <- g + 
+    geom_point(
+      data = restab[restab$FDR<alpha & restab$logFC < -minlogfc,],
+      aes(x = logFC, y = -log10(FDR)),
+      color = "steelblue", 
+      cex = pointsize) +
+    geom_point(
+      data = restab[restab$FDR<alpha & restab$logFC > minlogfc,],
+      aes(x = logFC, y = -log10(FDR)),
+      color = "darkred", 
+      cex = pointsize) +
+    geom_point(
+      data = restab[tgene,],
+      aes(x = logFC, y = -log10(FDR)),
+      cex = pointsize+2, 
+      shape=21, fill="orange") 
+
+  
+  # show the sign. genes:
+  # show the sigficantest genes:
+  if(show_sig){
+    range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+    top_up <- restab[ which(restab$FDR < alpha & restab$logFC > minlogfc),]
+    top_down <- restab[ which(restab$FDR < alpha & restab$logFC < -(minlogfc)),]
+    
+    if (length(rownames(top_up)) > 0 && (length(rownames(top_up)) > 3)){
+    logFC.scaled <- range01(top_up$logFC)
+    FDR.scaled <- range01(-log(top_up$FDR))
+    summ <- (logFC.scaled + FDR.scaled)
+    top_up <- top_up[order(-summ),][1:3,]
+    }
+
+    if (length(rownames(top_down))>0 && (length(rownames(top_down))> 3)){
+      logFC.scaled <- range01(-top_down$logFC)
+      FDR.scaled <- range01(-log(top_down$FDR))
+      summ <- (logFC.scaled + FDR.scaled)
+      top_down <- top_down[order(-summ),][1:3,]
+    }
+
+    top_peaks <- rbind(top_up, top_down)
+    top_peaks <- na.omit(top_peaks)
+
+
+    g_labels <- c(rownames(top_peaks))
+    print(c(g_labels,tgene))
+  }
+  
+  
+
+  g <- g + geom_label_repel(
+    data = restab[c(g_labels,tgene),] , aes(x = logFC, y = -log10(FDR), label = gsub("-","_",rownames(restab[c(g_labels,tgene),]))),
+    hjust = 0.1,
+    size = 4, segment.alpha = 0.5, 
+    segment.color = "black", 
+    min.segment.length=unit(0, "cm"), parse = T) + scale_fill_manual(values=cols) + scale_color_manual(values=cols)
+  g
+}
+```
+
+
+
+Now I adjust p-values (FDR), create volcano plots, histograms for the results (and save volcano plots as pdfs): 
+```{r}
+
+volcplots <- list()
+for (resname in names(all_res)){
+  # adjust p-values FDR
+  all_res[[resname]]$table$FDR <- p.adjust(all_res[[resname]]$table$PValue, method = "fdr")
+  #all_res_tmm[[resname]]$table$FDR <- all_res_tmm[[resname]]$table$PValue
+  restab <- all_res[[resname]]$table
+  restab$locus_tag <- rownames(restab)
+  
+  
+  restab$genes <- rownames(restab)
+  
+  
+  hist(restab$PValue, breaks=100, main=resname)
+  rownames(restab) <- gsub("LK433_RS02385", "acpP", rownames(restab))
+  rownames(restab) <- gsub("LK433_RS02380", "fabF", rownames(restab))
+  #print(do_volcano(restab, title=resname, x_limit = 8,  y_limit = 10, alpha=0.001,minlogfc = 2, pointsize = 3))
+  # make volcanos:
+  svg(paste0("../analysis/volcanoplots/",resname, ".svg"))
+  print(do_volcano(restab, title=resname, x_limit = 4, show_sig = T, minlogfc = 0, tgene = c("acpP", "fabF"),
+                   y_limit = 20, alpha=0.001, pointsize = 2))
+  dev.off()
+  
+  png(paste0("../analysis/volcanoplots/",resname, ".png"), height = 700, width = 700)
+  print(do_volcano(restab, title=resname, x_limit = 4, show_sig = T, minlogfc = 0, tgene = c("acpP", "fabF"),
+                   y_limit = 20, alpha=0.001, pointsize = 3))
+  dev.off()
+  
+  dataname <- paste("../analysis/diff_exp_rawdata/", resname, ".csv", sep = "")
+  write.csv(restab[order(restab$FDR),], dataname)
+  #pval distributions:
+  #hist(restab$PValue, breaks=100, main=resname)
+}
+
+```
+## time-course change of target genes:
+```{r}
+
+create_timecourse_plot <- function(idx_samples, plot_name_file, title, ylim){
+  nsamples <- names(all_res)[idx_samples]
+  timepoints <- as.numeric(gsub("[^_]+_(\\d+).*", "\\1", nsamples))
+  
+  tibble_acpp_fabf_logfc <- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
+    mutate(time=timepoints) %>% 
+    pivot_longer(1:2, values_to = "log2FC") %>% 
+    mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>%
+    select(c("time", "log2FC", "gene"))
+  
+  tibble_acpp_fabf_pval<- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
+    mutate(time=timepoints) %>% 
+    pivot_longer(1:2, values_to = "FDR") %>% 
+    mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
+    mutate(FDR = -log10(FDR)) %>%
+    select(c("time", "FDR", "gene"))
+  
+  tibble_logfc_fdr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
+  
+  plot <- tibble_logfc_fdr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + 
+    geom_line( size=0.5) + geom_point() + 
+    theme_classic() + 
+    geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
+    scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
+    labs(size="- log10 FDR", x="time (minutes)") + ylim(ylim)+
+    ggtitle(title) + 
+
+  svg(paste0("../analysis/", plot_name_file,".svg"),width =6, height=5)
+  print(plot)
+  dev.off()
+}
+
+create_timecourse_plot(c(13,9,10,11,12), "pna_vs_scr_diff_timepoints", 
+                       "acpP-PNA vs. scr-PNA at different time-points (target genes)", c(-0.5,0))
+
+create_timecourse_plot(c(14,5,6,7,8), "pna_vs_ctrl_diff_timepoints", 
+                       "acpP-PNA vs. ctrl at different time-points (target genes)", c(-0.7,0))
+
+create_timecourse_plot(1:4, "pna_vs_pna_t0_diff_timepoints", 
+                       "acpP-PNA at different time-points vs. T0 (target genes)", c(-0.4,0.7))
+
+
+# check pna vs scrambled for different time points (acpP and fabF)
+tibble_acpp_fabf_logfc <- as_tibble(t(sapply(all_res[c(13,9,10,11,12)], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
+  mutate(time=c(0,10,20,30,60)) %>% 
+  pivot_longer(1:2, values_to = "log2FC") %>% 
+  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% select(c("time", "log2FC", "gene"))
+
+tibble_acpp_fabf_pval<- as_tibble(t(sapply(all_res[c(13,9,10,11,12)], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
+  mutate(time=c(0,10,20,30,60)) %>% 
+  pivot_longer(1:2, values_to = "FDR") %>% 
+  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
+  mutate(FDR = -log10(FDR)) %>%
+  select(c("time", "FDR", "gene"))
+  
+tibble_pna_vs_scr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
+
+p_sc_pna <- tibble_pna_vs_scr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + geom_line( size=0.5) + 
+  geom_point() + 
+  theme_classic() + geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
+  scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
+  labs(size="- log10 FDR", x="time (minutes)") + ggtitle("acpP-PNA vs. scr-PNA at different time-points (target genes)")
+
+ggsave(filename = "../analysis/pna_vs_scr_timepoints.svg", plot = p_sc_pna ,width =6, height=5)
+
+
+# check pna vs ctrl for different time points (acpP and fabF)
+tibble_acpp_fabf_logfc <- as_tibble(t(sapply(res_pna_scr, function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
+  mutate(time=c(0,10,20,30,60)) %>% 
+  pivot_longer(1:2, values_to = "log2FC") %>% 
+  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% select(c("time", "log2FC", "gene"))
+
+tibble_acpp_fabf_pval<- as_tibble(t(sapply(res_pna_scr, function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
+  mutate(time=c(0,10,20,30,60)) %>% 
+  pivot_longer(1:2, values_to = "FDR") %>% 
+  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
+  mutate(FDR = -log10(FDR)) %>%
+  select(c("time", "FDR", "gene"))
+  
+tibble_pna_vs_scr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
+
+p_sc_pna <- tibble_pna_vs_scr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + geom_line( size=0.5) + 
+  geom_point() + 
+  theme_classic() + geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
+  scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
+  labs(size="- log10 FDR", x="time (minutes)") + ggtitle("acpP-PNA vs. scr-PNA at different time-points (target genes)")
+
+svg("../analysis/pna_vs_scr_timepoints.svg",width =6, height=5)
+p_sc_pna
+dev.off()
+```
+
+
+
+## heatmaps rnaseq:
+```{r}
+logchange <- data.frame(sapply(all_res, function(x) x$table$logFC), 
+                                row.names = rownames(all_res$PNA_10_vs_PNA_0$table)
+                                )
+pvals <- data.frame(sapply(all_res, function(x) x$table$FDR), 
+                            row.names = rownames(all_res$PNA_10_vs_PNA_0$table))
+
+topdegenes <- c()
+for (i in names(logchange)) {
+  degenes <- pvals[rownames(logchange)[logchange[[i]] < (-1) & pvals[[i]] < 0.05],]
+  degenes <- rownames(degenes[order(degenes[[i]]),])
+  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:10])))
+}
+
+for (i in names(logchange)) {
+  degenes <- pvals[rownames(logchange)[logchange[[i]] > 1 & pvals[[i]] < 0.05],]
+  degenes <- rownames(degenes[order(degenes[[i]]),])
+  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:10])))
+}
+
+logchange <- logchange[topdegenes,]
+pvals <- pvals[topdegenes,]
+
+
+#rownames(logchange) <- ifelse(logchange$genenames == "", rownames(logchange), logchange$genenames)
+#rownames(pvals) <- rownames(logchange)
+
+logchange <- logchange[order(logchange$PNA_10_vs_SCR_10, decreasing = T),]
+pvals <- pvals[rownames(logchange),]
+
+logCPM <- cpm(y, prior.count = 2, log = TRUE) 
+logCPM <- logCPM[rownames(logCPM)%in%topdegenes,]
+logCPM <- t(scale(t(logCPM))) #centered around 0
+
+
+diff_exp <- sapply(names(pvals), function(x) {
+  tf <- pvals[[x]] < 0.05 & abs(logchange[[x]])>1
+  ifelse(tf, "*", " ")
+  })
+
+
+c1 =  circlize::colorRamp2(c(-2, 0, 2), c("blue", "white", "red"))
+ht4 <- Heatmap(logchange, name = "Log2 FC",
+               col = c1,
+               cluster_rows = F, cluster_columns = F, show_heatmap_legend = F,
+               cell_fun = function(j, i, x, y, width, height, fill) {
+               #  grid.text(sprintf("%.1s", as.matrix(diff_exp)[i, j]), x, y, gp = gpar(fontsize = 10))
+                 grid.text(sprintf("%.1s", diff_exp[i, j]), x, y)
+               }, 
+               border = TRUE,
+               height = unit(20, "cm"), width = unit(8, "cm"),
+               column_names_gp = gpar(fontsize = 15),
+               column_names_rot = 45)
+
+lgd2 = Legend(col_fun = c1, title = expression("Log"[2]*" FC"), labels_gp = gpar(fontsize = 10),
+             title_gp = gpar(fontsize = 15),grid_width =  unit(0.8, "cm"),
+             at = c(-2, 0, 2), legend_width = unit(2, "cm"),
+             labels = c("-2", "  0", "  3"), legend_height = unit(3, "cm"),
+             title_position = "leftcenter-rot")
+
+svg("../analysis/heatmap_rnaseq.svg", height = 15, width = 15)
+print(ht4)
+draw(lgd2, x = unit(8, "cm"), y = unit(19, "cm"), just = c("left", "bottom"))
+dev.off()
+```
+
+# Pathway analysis:
+I perform the KEGG-analysis using the FRY gene set analysis tool from limma. I start with getting KEGGREST:
+```{r}
+library(KEGGREST)
+# get link and list to get kegg info:
+link_kegg <- keggLink("pathway", "pcoi")
+list_kegg <- keggList("pathway", "pcoi")
+
+kegg_pw_ids <- names(list_kegg)
+
+#rename genes, remove ones which arent in our data:
+names(link_kegg) <- gsub("pcoi:", "", names(link_kegg)) #rename genes as locus tags
+
+# get old locus tags:
+old_lts <- read.delim("../data/old_locus_tags.tsv")
+rownames(old_lts) <- old_lts$old_locus_tag
+# remove ones without old lt:
+link_kegg <- link_kegg[names(link_kegg) %in% old_lts$old_locus_tag]
+names(link_kegg) <- old_lts[names(link_kegg),1]
+```
+
+```{r}
+link_kegg <- link_kegg[names(link_kegg) %in% c(rownames(all_res$PNA_10_vs_PNA_0$table))] #remove genes not in data
+
+
+idx_kegg <- sapply(kegg_pw_ids, function(x){
+  x <- unique(names(link_kegg[link_kegg == x])) # choose all genes, except duplucates
+})
+
+```
+
+Adding other regulons (with regulated genes):
+```{r}
+# load regulondb
+regulondb <- read_delim("../data/pathway_annotation/regulonDB.txt", comment = "#",
+                        show_col_types = FALSE)
+# get all regulated genes per regulon:
+regulons <- sapply(unique(regulondb$TF_name), function (x){
+  g_names <- regulondb %>% filter(TF_name == x & reg_effect=="+") %>% 
+    select(gene_name) %>% unlist %>%unname
+  names(alt_names[alt_names %in% g_names])
+})
+regulons$PhoP <- NULL
+idx_kegg <- append(idx_kegg, regulons)
+```
+
+
+
+```{r}
+kegg_fry <-  fry(y,idx_kegg, design, con[,1])
+```
+
+```{r}
+l <- length(colnames(con))
+kegg_fry <- lapply(1:l, function(x) fry(y,idx_kegg, design, con[,x]))
+names(kegg_fry) <- colnames(con)
+```
+
+add KEGG terms:
+```{r}
+for (fryres in names(kegg_fry)) {
+  kegg_fry[[fryres]][["TERM"]] <- ifelse(grepl("path",rownames(kegg_fry[[fryres]])),
+                                              list_kegg[rownames(kegg_fry[[fryres]])],
+                                              rownames(kegg_fry[[fryres]]))
+  kegg_fry[[fryres]][["TERM"]] <- gsub("(.*) - Salmonella enterica subsp. enterica serovar Typhimurium SL1344",
+                                            "\\1", kegg_fry[[fryres]][["TERM"]])
+  write.csv(kegg_fry[[fryres]], paste("../analysis/pathway_analysis/", fryres, ".csv", sep = ""))
+}
+
+
+kegg_frysig <- lapply(kegg_fry, function(x) x[x[["FDR"]]<0.001 & x[["NGenes"]]>4,])
+kegg_siggos <- c()
+
+
+for (i in names(kegg_frysig)) {
+  print(i)
+  print(dim(kegg_frysig[[i]]))
+  print(kegg_frysig[[i]][,c(1,2,4,7)])
+  kegg_siggos <- c(kegg_siggos, rownames(kegg_frysig[[i]][1:10,]))  # can be modified
+}
+
+kegg_siggos <- unique(kegg_siggos[!grepl("NA", kegg_siggos)])
+
+```
+
+Create a heatmap-df  for KEGG:
+```{r}
+idx_kegg_char <- lapply(idx_kegg, as.character)
+
+
+# I create a dataframe with mean logFC values for each significant GO-term:
+hm_kegg <- t(as.data.frame(lapply(idx_kegg_char[kegg_siggos], function(x){
+  sapply(names(all_res), function(y){
+    mean(all_res[[y]]$table[x,]$logFC)
+  })
+})))
+
+hm_kegg <- as.data.frame(hm_kegg)
+
+rownames(hm_kegg) <- gsub("\\.", "\\:", rownames(hm_kegg))
+```
+make heatmap:
+```{r}
+hm_kegg <- hm_kegg[order(hm_kegg[,1], decreasing = T),]
+
+kegg_sizes <- sapply(idx_kegg_char[rownames(hm_kegg)], function(x) length(x))
+
+pvals <- data.frame(sapply(names(kegg_fry), 
+                           function(x) kegg_fry[[x]][rownames(hm_kegg),"FDR"]),
+                    row.names = rownames(hm_kegg))
+
+#select only significant ones:
+pvals <-sapply(pvals, function(x) ifelse(x<0.001, x <- "*", x<-"") )
+
+keggpws <- kegg_fry$PNA_10_vs_PNA_0[rownames(hm_kegg),] [["TERM"]]
+
+
+rownames(hm_kegg) <- ifelse(!is.na(keggpws),keggpws, rownames(hm_kegg) )
+```
+
+plot hm (save as pdf):
+```{r}
+col_fun = colorRamp2(c(-1,0, 1), c("blue", "white", "red"))
+
+
+
+ht_vert <- Heatmap(hm_kegg[,c(1:4,14, 5:8,13,9:12)], cluster_rows = F, cluster_columns = F,
+               name = "GO-analysis", col = col_fun,
+               show_heatmap_legend = F, 
+               row_title_side = "right", row_title_rot = 0,
+               border = TRUE, 
+               cell_fun = function(j, i, x, y, width, height, fill) {
+                 grid.text(sprintf("%.1s", pvals[,c(1:4,14, 5:8,13,9:12)][i, j]), x, y)
+               }, 
+               column_names_gp = gpar(fontsize = 11),
+               row_names_gp = gpar(fontsize = 10),
+               row_title = NULL,
+               width = unit(12, "cm"), height = unit(15, "cm"),
+               
+               right_annotation = rowAnnotation(genes = anno_barplot(kegg_sizes)))
+
+ht_vert
+
+lgd = Legend(col_fun = col_fun, title = expression("mean log"[2]*" FC"), #direction = "horizontal",
+             title_gp = gpar(fontsize = 12), labels = c("-1", " 0"," 1"), legend_height = unit(6, "cm"),
+             at = c(-1, 0, 1), border = "black",
+             title_position = "leftcenter-rot")
+draw(lgd)
+
+svg("../analysis/pathway_analysis/hm_KEGG.svg", width = unit(12, "cm"),  height = unit(10, "cm"))
+draw(ht_vert)
+draw(lgd, x = unit(2, "cm"), y = unit(10, "cm"), just = c("left", "bottom"))
+dev.off()
+```
+
+Make plot for only CAMP genes:
+```{r}
+CAMP_genes <- idx_kegg_char$`path:pcoi01503`
+
+```
+
+
