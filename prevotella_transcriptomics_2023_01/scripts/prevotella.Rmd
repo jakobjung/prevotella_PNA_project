@@ -23,6 +23,7 @@ library(MetBrewer)
 library(RColorBrewer)
 library(BiocGenerics)
 library('RUVSeq')
+library(circlize)
 library(ComplexHeatmap)
 ```
 
@@ -103,15 +104,22 @@ pairs(log(tpm_matrix[,1:10]))
 
 write.csv(tpm_matrix[,1:10], "../analysis/raw_counts_TPM.csv", row.names = T)
 
-svg("../analysis/pairs.svg")
-pairs(log(tpm_matrix[,c(1,2,3,5,23,24,32,33,36,38,39,41,42)]))
-dev.off()
+pairs(log(tpm_matrix[,c(1,2,3,5)]))
 
-svg("../analysis/correlationplot.svg", width = 15, height=15)
-corrplot::corrplot(cor(tpm_matrix[,],method = "spearman"))
-dev.off()
+tpm_cor <- cor(tpm_matrix,method = "pearson")
+
+c1 =  circlize::colorRamp2(seq(from = 0, to = 1, length.out = 100), viridis(100))
+
+ht4 <- Heatmap(tpm_cor, name = "cor (pearson)",
+               col =c1,
+               cluster_rows = F, cluster_columns = F, #show_heatmap_legend = F,
+               border = TRUE,
+               #height = unit(20, "cm"), width = unit(8, "cm"),
+               column_names_gp = gpar(fontsize = 10),
+               row_names_gp = gpar(fontsize = 10))
+ht4
 ```
-The control samples correlated better with each other than with the controls, which makes sense.
+We can see that the samples with low counts do not correlate as well with the other samples. 
 
 
 ```{r}
@@ -138,7 +146,7 @@ svg("../analysis/coverage_etc/length_plot_tpm_norm.svg")
 print(lpt)
 dev.off()
 ```
-We can see that TPM normalization already works to take away the gene length's effects on read depth.
+We can see that TPM normalization already works to take away the gene length effects on read depth.
 
 I also create a factor variable for groups of the sample data per condition:
 ```{r}
@@ -162,7 +170,7 @@ I do this by creating a cutoff $$\frac {10} {L} $$
 where L is the minimum library size in millions. We delete genes that are below the cutoff in at least 2 libraries:
 ```{r}
 L <- min(y$samples$lib.size) / 1000000
-cutoff <- 10
+cutoff <- 10/L
 keep <- rowSums(cpm(y) > cutoff) >= 3
 table(keep)
 ```
@@ -199,23 +207,12 @@ mycolors <- c(cividis(7)[2:6], inferno(7)[2:6], mako(8)[3:7])
 plotPCA(cpm(y), col=mycolors[test])
 plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[test],
         main="RLE", las=2)
-
-# save em as svgs
-svg("../analysis/PCA.svg")
-plotPCA(cpm(y), col=mycolors[test])
-dev.off()
-
-png("../analysis/PCA.png")
-plotPCA(cpm(y), col=mycolors[test])
-dev.off()
-svg("../analysis/RLE_allsamples.svg")
-plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[test],
-        main="RLE", las=2)
-dev.off()
 ```
+PCA/RLE plots show higher difference between the low-read samples (SCR_0_2 and CON_10_2).  We therefore apply additional Normalization, using the RUV-Seq package. 
+
 
 ## RUVs analysis:
-You can see that the TMM was succesful (TMM centers the RLE around 0) but there is a slight batch effect. so we try to run RUVSeq on only batch effects: 
+You can see that the TMM was succesful (TMM centers the RLE around 0) but there is an unwanted variation in some samples. so we try to run RUVSeq on only batch effects: 
 ```{r}
 set <- newSeqExpressionSet(as.matrix(y$counts), 
                            phenoData = data.frame(test, row.names=colnames(y$counts)))
@@ -326,45 +323,57 @@ y <- estimateDisp(y, design, robust = T)
 ```
 
 ```{r}
-con <- makeContrasts(PNA_10_vs_PNA_0 = PNA_10 - PNA_0,
+con <- makeContrasts(#PNA vs PNA0:
+                     PNA_10_vs_PNA_0 = PNA_10 - PNA_0,
                      PNA_20_vs_PNA_0 = PNA_20 - PNA_0,
                      PNA_30_vs_PNA_0 = PNA_30 - PNA_0,
                      PNA_60_vs_PNA_0 = PNA_60 - PNA_0,
+                     # SCR vs SCR0:
+                     SCR_10_vs_SCR_0 = SCR_10 - SCR_0,
+                     SCR_20_vs_SCR_0 = SCR_20 - SCR_0,
+                     SCR_30_vs_SCR_0 = SCR_30 - SCR_0,
+                     SCR_60_vs_SCR_0 = SCR_60 - SCR_0,
+                     #PNA vs CTRL:
+                     PNA_0_vs_CON_0 = PNA_0 - CON_0,
                      PNA_10_vs_CON_10 = PNA_10 - CON_10,
                      PNA_20_vs_CON_20 = PNA_20 - CON_20,
                      PNA_30_vs_CON_30 = PNA_30 - CON_30,
                      PNA_60_vs_CON_60 = PNA_60 - CON_60,
+                     #PNA vs SCR
+                     PNA_0_vs_SCR_0 = PNA_0 - SCR_0,
                      PNA_10_vs_SCR_10 = PNA_10 - SCR_10,
                      PNA_20_vs_SCR_20 = PNA_20 - SCR_20,
                      PNA_30_vs_SCR_30 = PNA_30 - SCR_30,
                      PNA_60_vs_SCR_60 = PNA_60 - SCR_60,
-                     PNA_0_vs_SCR_0 = PNA_0 - SCR_0,
-                     PNA_0_vs_CON_0 = PNA_0 - CON_0,
+                     
+                     
                      levels = design)
 
 fit <- glmQLFit(y, design, robust = TRUE)
 
-all_res <- list(PNA_10_vs_PNA_0 = glmQLFTest(fit, contrast = con[,1]),
+all_res <- list(#PNA vs PNA0:
+                PNA_10_vs_PNA_0 = glmQLFTest(fit, contrast = con[,1]),
                 PNA_20_vs_PNA_0 = glmQLFTest(fit, contrast = con[,2]),
                 PNA_30_vs_PNA_0 = glmQLFTest(fit, contrast = con[,3]),
                 PNA_60_vs_PNA_0 = glmQLFTest(fit, contrast = con[,4]),
-                PNA_10_vs_CON_10 = glmQLFTest(fit, contrast = con[,5]),
-                PNA_20_vs_CON_20 = glmQLFTest(fit, contrast = con[,6]),
-                PNA_30_vs_CON_30 = glmQLFTest(fit, contrast = con[,7]),
-                PNA_60_vs_CON_60 = glmQLFTest(fit, contrast = con[,8]),
-                PNA_10_vs_SCR_10 = glmQLFTest(fit, contrast = con[,9]),
-                PNA_20_vs_SCR_20 = glmQLFTest(fit, contrast = con[,10]),
-                PNA_30_vs_SCR_30 = glmQLFTest(fit, contrast = con[,11]),
-                PNA_60_vs_SCR_60 = glmQLFTest(fit, contrast = con[,12]),
-                PNA_0_vs_SCR_0 = glmQLFTest(fit, contrast = con[,13]),
-                PNA_0_vs_CON_0 = glmQLFTest(fit, contrast = con[,14]))
-
-
-res_pna_scr <- list(PNA_0_vs_SCR_0 = glmQLFTest(fit, contrast = con[,13]),
-                    PNA_10_vs_SCR_10 = glmQLFTest(fit, contrast = con[,9]),
-                    PNA_20_vs_SCR_20 = glmQLFTest(fit, contrast = con[,10]),
-                    PNA_30_vs_SCR_30 = glmQLFTest(fit, contrast = con[,11]),
-                    PNA_60_vs_SCR_60 = glmQLFTest(fit, contrast = con[,12]))
+                # SCR vs SCR0:
+                SCR_10_vs_SCR_0 = glmQLFTest(fit, contrast = con[,5]),
+                SCR_20_vs_SCR_0 = glmQLFTest(fit, contrast = con[,6]),
+                SCR_30_vs_SCR_0 = glmQLFTest(fit, contrast = con[,7]),
+                SCR_60_vs_SCR_0 = glmQLFTest(fit, contrast = con[,8]),
+                #PNA vs CTRL:
+                PNA_0_vs_CON_0 = glmQLFTest(fit, contrast = con[,9]),
+                PNA_10_vs_CON_10 = glmQLFTest(fit, contrast = con[,10]),
+                PNA_20_vs_CON_20 = glmQLFTest(fit, contrast = con[,11]),
+                PNA_30_vs_CON_30 = glmQLFTest(fit, contrast = con[,12]),
+                PNA_60_vs_CON_60 = glmQLFTest(fit, contrast = con[,13]),
+                #PNA vs SCR
+                PNA_0_vs_SCR_0 = glmQLFTest(fit, contrast = con[,14]),
+                PNA_10_vs_SCR_10 = glmQLFTest(fit, contrast = con[,15]),
+                PNA_20_vs_SCR_20 = glmQLFTest(fit, contrast = con[,16]),
+                PNA_30_vs_SCR_30 = glmQLFTest(fit, contrast = con[,17]),
+                PNA_60_vs_SCR_60 = glmQLFTest(fit, contrast = con[,18])
+                )
 ```
 
 
@@ -503,10 +512,10 @@ for (resname in names(all_res)){
                    y_limit = 20, alpha=0.001, pointsize = 2))
   dev.off()
   
-  png(paste0("../analysis/volcanoplots/",resname, ".png"), height = 700, width = 700)
-  print(do_volcano(restab, title=resname, x_limit = 4, show_sig = T, minlogfc = 0, tgene = c("acpP", "fabF"),
-                   y_limit = 20, alpha=0.001, pointsize = 3))
-  dev.off()
+  #png(paste0("../analysis/volcanoplots/",resname, ".png"), height = 700, width = 700)
+  #print(do_volcano(restab, title=resname, x_limit = 4, show_sig = T, minlogfc = 0, tgene = c("acpP", "fabF"),
+  #                 y_limit = 20, alpha=0.001, pointsize = 3))
+  #dev.off()
   
   dataname <- paste("../analysis/diff_exp_rawdata/", resname, ".csv", sep = "")
   write.csv(restab[order(restab$FDR),], dataname)
@@ -517,97 +526,75 @@ for (resname in names(all_res)){
 ```
 ## time-course change of target genes:
 ```{r}
-
-create_timecourse_plot <- function(idx_samples, plot_name_file, title, ylim){
+create_timecourse_plot <- function(idx_samples,tgenes, gene_names = NULL, plot_name_file, title, ylim=c(-2,2), cols="Navajo"){
   nsamples <- names(all_res)[idx_samples]
   timepoints <- as.numeric(gsub("[^_]+_(\\d+).*", "\\1", nsamples))
   
-  tibble_acpp_fabf_logfc <- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
+  tibble_logfc <- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[tgenes,1]))) %>%
     mutate(time=timepoints) %>% 
-    pivot_longer(1:2, values_to = "log2FC") %>% 
-    mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>%
-    select(c("time", "log2FC", "gene"))
+    pivot_longer(1:length(tgenes), values_to = "log2FC")
   
-  tibble_acpp_fabf_pval<- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
+  tibble_pval<- as_tibble(t(sapply(all_res[idx_samples], function(x) x$table[tgenes,4]))) %>%
     mutate(time=timepoints) %>% 
-    pivot_longer(1:2, values_to = "FDR") %>% 
-    mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
-    mutate(FDR = -log10(FDR)) %>%
-    select(c("time", "FDR", "gene"))
+    pivot_longer(1:length(tgenes), values_to = "FDR")
   
-  tibble_logfc_fdr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
+  if (is.null(gene_names)) {
+    tibble_logfc <- tibble_logfc %>% mutate(gene = rep(tgenes, length(timepoints))) %>% select(c("time", "log2FC", "gene"))
+    tibble_pval <- tibble_pval %>% mutate(gene = rep(tgenes, length(timepoints))) %>% select(c("time", "FDR", "gene"))
+  } else {
+    tibble_logfc <- tibble_logfc %>% mutate(gene = rep(gene_names, length(timepoints))) %>% select(c("time", "log2FC", "gene"))
+    tibble_pval <- tibble_pval %>% mutate(gene = rep(gene_names, length(timepoints))) %>% select(c("time", "FDR", "gene"))
+  }
+
+  
+  tibble_logfc_fdr <- tibble_logfc %>% mutate(FDR = -log10(tibble_pval$FDR ))
   
   plot <- tibble_logfc_fdr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + 
-    geom_line( size=0.5) + geom_point() + 
-    theme_classic() + 
+    geom_line( linewidth=0.7) + geom_point() + 
+    theme_classic() +
     geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
-    scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
+    scale_x_continuous(breaks = timepoints) +
+    scale_color_manual(values = met.brewer(cols, n = length(tgenes)))+
+    #scale_color_manual(values = inferno(length(tgenes)))+
     labs(size="- log10 FDR", x="time (minutes)") + ylim(ylim)+
-    ggtitle(title) + 
+    ggtitle(title) + scale_size_continuous(limits = c(0,20), breaks = c(0,2,5,10))
 
-  svg(paste0("../analysis/", plot_name_file,".svg"),width =6, height=5)
+  #svg(paste0("../analysis/", plot_name_file,".svg"),width =6, height=5)
   print(plot)
-  dev.off()
+  #dev.off()
 }
 
-create_timecourse_plot(c(13,9,10,11,12), "pna_vs_scr_diff_timepoints", 
-                       "acpP-PNA vs. scr-PNA at different time-points (target genes)", c(-0.5,0))
+MetBrewer::display_all()
+# PNA vs PNA0:
+plot_pnavspna0 <- create_timecourse_plot(1:4,tgenes = c("LK433_RS02385", "LK433_RS02380"), 
+                                         gene_names = c("acpP", "fabF"),
+                                         plot_name_file="pna_vs_pna_0_diff_timepoints", 
+                                         title="acpP-PNA vs. PNA0 (target genes)", ylim=c(-0.5,1))
 
-create_timecourse_plot(c(14,5,6,7,8), "pna_vs_ctrl_diff_timepoints", 
-                       "acpP-PNA vs. ctrl at different time-points (target genes)", c(-0.7,0))
+ggsave(filename = "../analysis/pna_vs_pna_0_diff_timepoints.svg", plot = plot_pnavspna0 ,width =6, height=5)
 
-create_timecourse_plot(1:4, "pna_vs_pna_t0_diff_timepoints", 
-                       "acpP-PNA at different time-points vs. T0 (target genes)", c(-0.4,0.7))
+# scr vs scr 0:
+plot_scrvsscr0 <- create_timecourse_plot(5:8,tgenes = c("LK433_RS02385", "LK433_RS02380"), 
+                                         gene_names = c("acpP", "fabF"),
+                                         plot_name_file="scr_vs_scr_0_diff_timepoints", 
+                                         title="scr-PNA vs. SCR0 (target genes)", ylim=c(-0.5,1))
+ggsave(filename = "../analysis/scr_vs_scr_0_diff_timepoints.svg", plot = plot_scrvsscr0 ,width =6, height=5)
 
-
-# check pna vs scrambled for different time points (acpP and fabF)
-tibble_acpp_fabf_logfc <- as_tibble(t(sapply(all_res[c(13,9,10,11,12)], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
-  mutate(time=c(0,10,20,30,60)) %>% 
-  pivot_longer(1:2, values_to = "log2FC") %>% 
-  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% select(c("time", "log2FC", "gene"))
-
-tibble_acpp_fabf_pval<- as_tibble(t(sapply(all_res[c(13,9,10,11,12)], function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
-  mutate(time=c(0,10,20,30,60)) %>% 
-  pivot_longer(1:2, values_to = "FDR") %>% 
-  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
-  mutate(FDR = -log10(FDR)) %>%
-  select(c("time", "FDR", "gene"))
-  
-tibble_pna_vs_scr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
-
-p_sc_pna <- tibble_pna_vs_scr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + geom_line( size=0.5) + 
-  geom_point() + 
-  theme_classic() + geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
-  scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
-  labs(size="- log10 FDR", x="time (minutes)") + ggtitle("acpP-PNA vs. scr-PNA at different time-points (target genes)")
-
-ggsave(filename = "../analysis/pna_vs_scr_timepoints.svg", plot = p_sc_pna ,width =6, height=5)
+# pna vs ctrl:
+plot_pna_vs_ctrl <- create_timecourse_plot(9:13,tgenes = c("LK433_RS02385", "LK433_RS02380"), 
+                                         gene_names = c("acpP", "fabF"),
+                                         plot_name_file="pna_vs_ctrl_diff_timepoints", 
+                                         title="acpP-PNA vs. CTRL (target genes)", ylim=c(-1,0.5))
+ggsave(filename = "../analysis/pna_vs_ctrl_diff_timepoints.svg", plot = plot_pna_vs_ctrl ,width =6, height=5)
 
 
-# check pna vs ctrl for different time points (acpP and fabF)
-tibble_acpp_fabf_logfc <- as_tibble(t(sapply(res_pna_scr, function(x) x$table[c("LK433_RS02385","LK433_RS02380"),1]))) %>%
-  mutate(time=c(0,10,20,30,60)) %>% 
-  pivot_longer(1:2, values_to = "log2FC") %>% 
-  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% select(c("time", "log2FC", "gene"))
-
-tibble_acpp_fabf_pval<- as_tibble(t(sapply(res_pna_scr, function(x) x$table[c("LK433_RS02385","LK433_RS02380"),4]))) %>%
-  mutate(time=c(0,10,20,30,60)) %>% 
-  pivot_longer(1:2, values_to = "FDR") %>% 
-  mutate(gene=if_else(name=="V1", "acpP", "fabF")) %>% 
-  mutate(FDR = -log10(FDR)) %>%
-  select(c("time", "FDR", "gene"))
-  
-tibble_pna_vs_scr <- tibble_acpp_fabf_logfc %>% mutate(FDR = tibble_acpp_fabf_pval$FDR)
-
-p_sc_pna <- tibble_pna_vs_scr %>% ggplot(aes(x=time, y=log2FC, color=gene, size=FDR)) + geom_line( size=0.5) + 
-  geom_point() + 
-  theme_classic() + geom_abline(slope = 0, intercept = 0, linetype = "dotted", alpha=0.3) +
-  scale_color_manual(values = met.brewer("Greek")[c(2,4)])+
-  labs(size="- log10 FDR", x="time (minutes)") + ggtitle("acpP-PNA vs. scr-PNA at different time-points (target genes)")
-
-svg("../analysis/pna_vs_scr_timepoints.svg",width =6, height=5)
-p_sc_pna
-dev.off()
+# pna vs scr:
+plot_pna_vs_scr <- create_timecourse_plot(14:18,tgenes = c("LK433_RS02385", "LK433_RS02380"), 
+                                         gene_names = c("acpP", "fabF"),
+                                         plot_name_file="pna_vs_scr_diff_timepoints", 
+                                         title="acpP-PNA vs. SCR (target genes)", ylim=c(-1,0.5))
+ggsave(filename = "../analysis/pna_vs_scr_diff_timepoints.svg", plot = plot_pna_vs_scr ,width =6, height=5)
+plot_pna_vs_scr
 ```
 
 
@@ -624,13 +611,13 @@ topdegenes <- c()
 for (i in names(logchange)) {
   degenes <- pvals[rownames(logchange)[logchange[[i]] < (-1) & pvals[[i]] < 0.05],]
   degenes <- rownames(degenes[order(degenes[[i]]),])
-  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:10])))
+  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:5])))
 }
 
 for (i in names(logchange)) {
   degenes <- pvals[rownames(logchange)[logchange[[i]] > 1 & pvals[[i]] < 0.05],]
   degenes <- rownames(degenes[order(degenes[[i]]),])
-  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:10])))
+  topdegenes <- unique(append(topdegenes, na.omit(degenes[1:5])))
 }
 
 logchange <- logchange[topdegenes,]
@@ -710,26 +697,7 @@ idx_kegg <- sapply(kegg_pw_ids, function(x){
 
 ```
 
-Adding other regulons (with regulated genes):
-```{r}
-# load regulondb
-regulondb <- read_delim("../data/pathway_annotation/regulonDB.txt", comment = "#",
-                        show_col_types = FALSE)
-# get all regulated genes per regulon:
-regulons <- sapply(unique(regulondb$TF_name), function (x){
-  g_names <- regulondb %>% filter(TF_name == x & reg_effect=="+") %>% 
-    select(gene_name) %>% unlist %>%unname
-  names(alt_names[alt_names %in% g_names])
-})
-regulons$PhoP <- NULL
-idx_kegg <- append(idx_kegg, regulons)
-```
 
-
-
-```{r}
-kegg_fry <-  fry(y,idx_kegg, design, con[,1])
-```
 
 ```{r}
 l <- length(colnames(con))
@@ -757,7 +725,7 @@ for (i in names(kegg_frysig)) {
   print(i)
   print(dim(kegg_frysig[[i]]))
   print(kegg_frysig[[i]][,c(1,2,4,7)])
-  kegg_siggos <- c(kegg_siggos, rownames(kegg_frysig[[i]][1:10,]))  # can be modified
+  kegg_siggos <- c(kegg_siggos, rownames(kegg_frysig[[i]][1:15,]))  # can be modified
 }
 
 kegg_siggos <- unique(kegg_siggos[!grepl("NA", kegg_siggos)])
@@ -791,7 +759,7 @@ pvals <- data.frame(sapply(names(kegg_fry),
                     row.names = rownames(hm_kegg))
 
 #select only significant ones:
-pvals <-sapply(pvals, function(x) ifelse(x<0.001, x <- "*", x<-"") )
+pvals <-sapply(pvals, function(x) ifelse(x<0.01, x <- "*", x<-"") )
 
 keggpws <- kegg_fry$PNA_10_vs_PNA_0[rownames(hm_kegg),] [["TERM"]]
 
@@ -801,19 +769,26 @@ rownames(hm_kegg) <- ifelse(!is.na(keggpws),keggpws, rownames(hm_kegg) )
 
 plot hm (save as pdf):
 ```{r}
-col_fun = colorRamp2(c(-1,0, 1), c("blue", "white", "red"))
+col_fun = colorRamp2(c(-1,0, 1), c("darkblue", "white", "darkred"))
+
+g_samples <- factor(c(rep("PNA vs. PNA0", 4), rep("SCR vs. SCR0", 4), rep("PNA vs. CON", 5), rep("PNA vs. SCR", 5)), 
+                    levels = c("PNA vs. PNA0", "SCR vs. SCR0", "PNA vs. CON", "PNA vs. SCR"))
 
 
+rownames(hm_kegg) <- gsub(" - Prevotella copri", "", rownames(hm_kegg))
+rownames(hm_kegg) <- gsub("; Including.*", "", rownames(hm_kegg))
 
-ht_vert <- Heatmap(hm_kegg[,c(1:4,14, 5:8,13,9:12)], cluster_rows = F, cluster_columns = F,
+ht_vert <- Heatmap(hm_kegg, cluster_rows = F, cluster_columns = F,
                name = "GO-analysis", col = col_fun,
                show_heatmap_legend = F, 
+               column_split = g_samples,
                row_title_side = "right", row_title_rot = 0,
                border = TRUE, 
                cell_fun = function(j, i, x, y, width, height, fill) {
-                 grid.text(sprintf("%.1s", pvals[,c(1:4,14, 5:8,13,9:12)][i, j]), x, y)
+                 grid.text(sprintf("%.1s", pvals[i, j]), x, y)
                }, 
                column_names_gp = gpar(fontsize = 11),
+               column_title_gp = gpar(fontsize = 10),
                row_names_gp = gpar(fontsize = 10),
                row_title = NULL,
                width = unit(12, "cm"), height = unit(15, "cm"),
@@ -836,8 +811,25 @@ dev.off()
 
 Make plot for only CAMP genes:
 ```{r}
+FA_biosynth <-  idx_kegg$`path:pcoi00061`
+
+plot_pna_vs_scr_fa <- create_timecourse_plot(1:4,tgenes = FA_biosynth, 
+                                        gene_names = gsub("LK433_RS02380", "fabF", FA_biosynth),
+                                         plot_name_file="pna_vs_pna0_FA", 
+                                         title="acpP-PNA vs. PNA0 (FAB genes)", ylim=c(-1,1.5), cols = "Signac")
+
+ggsave(filename = "../analysis/pna_vs_scr_diff_timepoints_FA.svg", plot = plot_pna_vs_ctrl ,width =6, height=5)
+
+
+
+
 CAMP_genes <- idx_kegg_char$`path:pcoi01503`
 
+
+plot_pna_vs_scr_fa <- create_timecourse_plot(1:4,tgenes = CAMP_genes, 
+                                        gene_names = gsub("LK433_RS02380", "fabF", CAMP_genes),
+                                         plot_name_file="pna_vs_pna0_FA", 
+                                         title="acpP-PNA vs. PNA0 (FAB genes)", ylim=c(-1,3), cols = "Degas")
 ```
 
 
