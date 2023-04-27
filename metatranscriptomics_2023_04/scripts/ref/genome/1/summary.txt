@@ -1,0 +1,13 @@
+#Summary
+#Generated on	Wed Apr 26 09:10:37 UTC 2023
+#Version	5
+chroms	1
+bases	16085781
+defined	16069181
+undefined	16600
+contigs	3
+scaffolds	3
+interpad	300
+source	/home/jakob_jung/prevotella_experiments/metatranscriptomics_2023_04/data/reference_sequences/tot_seqs.fasta
+bytes	16299003
+last modified	1681320109602

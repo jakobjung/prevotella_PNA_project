@@ -1,0 +1,1254 @@
+Start trimming
+../data/fastq/1_CON_0_1_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/1_CON_0_1_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/1_CON_0_1_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.123 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.334 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.079 seconds.
+Processing time:   		112.970 seconds.
+
+Input:                  	41137282 reads 		4154865482 bases.
+QTrimmed:               	10459 reads (0.03%) 	58351 bases (0.00%)
+FTrimmed:               	41137282 reads (100.00%) 	493647384 bases (11.88%)
+KTrimmed:               	26137878 reads (63.54%) 	1249705947 bases (30.08%)
+Total Removed:          	1351044 reads (3.28%) 	1743411682 bases (41.96%)
+Result:                 	39786238 reads (96.72%) 	2411453800 bases (58.04%)
+
+Time:                         	113.387 seconds.
+Reads Processed:      41137k 	362.80k reads/sec
+Bases Processed:       4154m 	36.64m bases/sec
+../data/fastq/3_CON_2_1_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/3_CON_2_1_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/3_CON_2_1_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.097 seconds.
+Memory: max=4294m, total=4294m, free=4255m, used=39m
+
+Input is being processed as unpaired
+Started output streams:	0.025 seconds.
+Processing time:   		88.591 seconds.
+
+Input:                  	26909660 reads 		2717875660 bases.
+QTrimmed:               	6043 reads (0.02%) 	32161 bases (0.00%)
+FTrimmed:               	26909660 reads (100.00%) 	322915920 bases (11.88%)
+KTrimmed:               	14626302 reads (54.35%) 	688009045 bases (25.31%)
+Total Removed:          	809552 reads (3.01%) 	1010957126 bases (37.20%)
+Result:                 	26100108 reads (96.99%) 	1706918534 bases (62.80%)
+
+Time:                         	88.718 seconds.
+Reads Processed:      26909k 	303.32k reads/sec
+Bases Processed:       2717m 	30.64m bases/sec
+../data/fastq/4_CON_2_2_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/4_CON_2_2_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/4_CON_2_2_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.066 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.023 seconds.
+Processing time:   		59.406 seconds.
+
+Input:                  	20437300 reads 		2064167300 bases.
+QTrimmed:               	4336 reads (0.02%) 	22130 bases (0.00%)
+FTrimmed:               	20437300 reads (100.00%) 	245247600 bases (11.88%)
+KTrimmed:               	10679159 reads (52.25%) 	493711416 bases (23.92%)
+Total Removed:          	602488 reads (2.95%) 	738981146 bases (35.80%)
+Result:                 	19834812 reads (97.05%) 	1325186154 bases (64.20%)
+
+Time:                         	59.499 seconds.
+Reads Processed:      20437k 	343.49k reads/sec
+Bases Processed:       2064m 	34.69m bases/sec
+../data/fastq/5_PNA_0_1_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/5_PNA_0_1_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/5_PNA_0_1_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.014 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.073 seconds.
+Memory: max=4294m, total=4294m, free=4256m, used=38m
+
+Input is being processed as unpaired
+Started output streams:	0.023 seconds.
+Processing time:   		73.105 seconds.
+
+Input:                  	29042316 reads 		2933273916 bases.
+QTrimmed:               	7611 reads (0.03%) 	40265 bases (0.00%)
+FTrimmed:               	29042316 reads (100.00%) 	348507792 bases (11.88%)
+KTrimmed:               	18024814 reads (62.06%) 	876278890 bases (29.87%)
+Total Removed:          	937562 reads (3.23%) 	1224826947 bases (41.76%)
+Result:                 	28104754 reads (96.77%) 	1708446969 bases (58.24%)
+
+Time:                         	73.206 seconds.
+Reads Processed:      29042k 	396.72k reads/sec
+Bases Processed:       2933m 	40.07m bases/sec
+../data/fastq/6_PNA_0_2_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/6_PNA_0_2_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/6_PNA_0_2_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.037 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.083 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.023 seconds.
+Processing time:   		74.642 seconds.
+
+Input:                  	22774391 reads 		2300213491 bases.
+QTrimmed:               	5595 reads (0.02%) 	31020 bases (0.00%)
+FTrimmed:               	22774391 reads (100.00%) 	273292692 bases (11.88%)
+KTrimmed:               	13272832 reads (58.28%) 	634873751 bases (27.60%)
+Total Removed:          	565387 reads (2.48%) 	908197463 bases (39.48%)
+Result:                 	22209004 reads (97.52%) 	1392016028 bases (60.52%)
+
+Time:                         	74.752 seconds.
+Reads Processed:      22774k 	304.67k reads/sec
+Bases Processed:       2300m 	30.77m bases/sec
+../data/fastq/7_PNA_2_1_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/7_PNA_2_1_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/7_PNA_2_1_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.025 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.119 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		78.412 seconds.
+
+Input:                  	27084102 reads 		2735494302 bases.
+QTrimmed:               	6706 reads (0.02%) 	34138 bases (0.00%)
+FTrimmed:               	27084102 reads (100.00%) 	325009224 bases (11.88%)
+KTrimmed:               	16194199 reads (59.79%) 	770680335 bases (28.17%)
+Total Removed:          	989106 reads (3.65%) 	1095723697 bases (40.06%)
+Result:                 	26094996 reads (96.35%) 	1639770605 bases (59.94%)
+
+Time:                         	78.561 seconds.
+Reads Processed:      27084k 	344.75k reads/sec
+Bases Processed:       2735m 	34.82m bases/sec
+../data/fastq/8_PNA_2_2_NEB_DPLEX.fq.gz starts trimming nowwwwwww
+8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/8_PNA_2_2_NEB_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/8_PNA_2_2_NEB_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.014 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.082 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.028 seconds.
+Processing time:   		58.986 seconds.
+
+Input:                  	16135916 reads 		1629727516 bases.
+QTrimmed:               	2748 reads (0.02%) 	14425 bases (0.00%)
+FTrimmed:               	16135916 reads (100.00%) 	193630992 bases (11.88%)
+KTrimmed:               	7063855 reads (43.78%) 	332791439 bases (20.42%)
+Total Removed:          	416633 reads (2.58%) 	526436856 bases (32.30%)
+Result:                 	15719283 reads (97.42%) 	1103290660 bases (67.70%)
+
+Time:                         	59.101 seconds.
+Reads Processed:      16135k 	273.02k reads/sec
+Bases Processed:       1629m 	27.58m bases/sec
+../data/fastq/CON_0_1_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+CON_0_1_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_0_1_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_0_1_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.023 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.075 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.019 seconds.
+Processing time:   		31.687 seconds.
+
+Input:                  	11848371 reads 		1196685471 bases.
+QTrimmed:               	8853 reads (0.07%) 	31822 bases (0.00%)
+FTrimmed:               	11848371 reads (100.00%) 	142180452 bases (11.88%)
+KTrimmed:               	6685149 reads (56.42%) 	333559519 bases (27.87%)
+Total Removed:          	121530 reads (1.03%) 	475771793 bases (39.76%)
+Result:                 	11726841 reads (98.97%) 	720913678 bases (60.24%)
+
+Time:                         	31.785 seconds.
+Reads Processed:      11848k 	372.77k reads/sec
+Bases Processed:       1196m 	37.65m bases/sec
+../data/fastq/CON_0_2_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+CON_0_2_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_0_2_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_0_2_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.025 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.156 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.025 seconds.
+Processing time:   		39.324 seconds.
+
+Input:                  	10870273 reads 		1097897573 bases.
+QTrimmed:               	6991 reads (0.06%) 	24579 bases (0.00%)
+FTrimmed:               	10870273 reads (100.00%) 	130443276 bases (11.88%)
+KTrimmed:               	5364985 reads (49.35%) 	264583717 bases (24.10%)
+Total Removed:          	84706 reads (0.78%) 	395051572 bases (35.98%)
+Result:                 	10785567 reads (99.22%) 	702846001 bases (64.02%)
+
+Time:                         	39.509 seconds.
+Reads Processed:      10870k 	275.14k reads/sec
+Bases Processed:       1097m 	27.79m bases/sec
+../data/fastq/CON_2_1_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+CON_2_1_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_2_1_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_2_1_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.014 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.121 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.023 seconds.
+Processing time:   		32.184 seconds.
+
+Input:                  	8863887 reads 		895252587 bases.
+QTrimmed:               	6584 reads (0.07%) 	24822 bases (0.00%)
+FTrimmed:               	8863887 reads (100.00%) 	106366644 bases (11.88%)
+KTrimmed:               	5595392 reads (63.13%) 	293839564 bases (32.82%)
+Total Removed:          	237491 reads (2.68%) 	400231030 bases (44.71%)
+Result:                 	8626396 reads (97.32%) 	495021557 bases (55.29%)
+
+Time:                         	32.332 seconds.
+Reads Processed:       8863k 	274.15k reads/sec
+Bases Processed:        895m 	27.69m bases/sec
+../data/fastq/CON_2_2_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+CON_2_2_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/CON_2_2_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/CON_2_2_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.015 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.092 seconds.
+Memory: max=4294m, total=4294m, free=4260m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.022 seconds.
+Processing time:   		32.793 seconds.
+
+Input:                  	8908500 reads 		899758500 bases.
+QTrimmed:               	4754 reads (0.05%) 	16323 bases (0.00%)
+FTrimmed:               	8908500 reads (100.00%) 	106902000 bases (11.88%)
+KTrimmed:               	3596144 reads (40.37%) 	180397544 bases (20.05%)
+Total Removed:          	66083 reads (0.74%) 	287315867 bases (31.93%)
+Result:                 	8842417 reads (99.26%) 	612442633 bases (68.07%)
+
+Time:                         	32.911 seconds.
+Reads Processed:       8908k 	270.68k reads/sec
+Bases Processed:        899m 	27.34m bases/sec
+../data/fastq/PNA_0_1_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+PNA_0_1_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_0_1_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_0_1_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.017 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.072 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.021 seconds.
+Processing time:   		32.883 seconds.
+
+Input:                  	9306347 reads 		939941047 bases.
+QTrimmed:               	5469 reads (0.06%) 	19818 bases (0.00%)
+FTrimmed:               	9306347 reads (100.00%) 	111676164 bases (11.88%)
+KTrimmed:               	4501261 reads (48.37%) 	228607614 bases (24.32%)
+Total Removed:          	124137 reads (1.33%) 	340303596 bases (36.20%)
+Result:                 	9182210 reads (98.67%) 	599637451 bases (63.80%)
+
+Time:                         	32.980 seconds.
+Reads Processed:       9306k 	282.18k reads/sec
+Bases Processed:        939m 	28.50m bases/sec
+../data/fastq/PNA_0_2_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+PNA_0_2_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_0_2_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_0_2_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4266m, used=28m
+
+Added 217135 kmers; time: 	0.109 seconds.
+Memory: max=4294m, total=4294m, free=4257m, used=37m
+
+Input is being processed as unpaired
+Started output streams:	0.029 seconds.
+Processing time:   		30.574 seconds.
+
+Input:                  	9507303 reads 		960237603 bases.
+QTrimmed:               	5798 reads (0.06%) 	20471 bases (0.00%)
+FTrimmed:               	9507303 reads (100.00%) 	114087636 bases (11.88%)
+KTrimmed:               	4549619 reads (47.85%) 	226942351 bases (23.63%)
+Total Removed:          	84974 reads (0.89%) 	341050458 bases (35.52%)
+Result:                 	9422329 reads (99.11%) 	619187145 bases (64.48%)
+
+Time:                         	30.716 seconds.
+Reads Processed:       9507k 	309.52k reads/sec
+Bases Processed:        960m 	31.26m bases/sec
+../data/fastq/PNA_2_1_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+PNA_2_1_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_2_1_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_2_1_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.036 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.087 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.020 seconds.
+Processing time:   		26.136 seconds.
+
+Input:                  	9510000 reads 		960510000 bases.
+QTrimmed:               	6238 reads (0.07%) 	21090 bases (0.00%)
+FTrimmed:               	9510000 reads (100.00%) 	114120000 bases (11.88%)
+KTrimmed:               	4929264 reads (51.83%) 	246829974 bases (25.70%)
+Total Removed:          	89754 reads (0.94%) 	360971064 bases (37.58%)
+Result:                 	9420246 reads (99.06%) 	599538936 bases (62.42%)
+
+Time:                         	26.247 seconds.
+Reads Processed:       9510k 	362.32k reads/sec
+Bases Processed:        960m 	36.59m bases/sec
+../data/fastq/PNA_2_2_RZ_DPLEX.fq.gz starts trimming nowwwwwww
+PNA_2_2_RZ_DPLEX_trimmed.fastq.gz
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx4g -Xms4g -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ jgi.BBDukF in=../data/fastq/PNA_2_2_RZ_DPLEX.fq.gz ref=../data/reference_sequences/adapters.fa -Xmx4g t=20 out=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDukF [in=../data/fastq/PNA_2_2_RZ_DPLEX.fq.gz, ref=../data/reference_sequences/adapters.fa, -Xmx4g, t=20, out=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.18
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.020 seconds.
+Initial:
+Memory: max=4294m, total=4294m, free=4268m, used=26m
+
+Added 217135 kmers; time: 	0.087 seconds.
+Memory: max=4294m, total=4294m, free=4259m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.022 seconds.
+Processing time:   		25.490 seconds.
+
+Input:                  	6567206 reads 		663287806 bases.
+QTrimmed:               	2997 reads (0.05%) 	10082 bases (0.00%)
+FTrimmed:               	6567206 reads (100.00%) 	78806472 bases (11.88%)
+KTrimmed:               	2496960 reads (38.02%) 	125027268 bases (18.85%)
+Total Removed:          	67055 reads (1.02%) 	203843822 bases (30.73%)
+Result:                 	6500151 reads (98.98%) 	459443984 bases (69.27%)
+
+Time:                         	25.603 seconds.
+Reads Processed:       6567k 	256.50k reads/sec
+Bases Processed:        663m 	25.91m bases/sec
+Trimming done. Start mapping
+Starting mapping for sample: 1_CON_0_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/1_CON_0_1_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/1_CON_0_1_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+Writing reference.
+Executing dna.FastaToChromArrays2 [../data/reference_sequences/tot_seqs.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
+
+Set genScaffoldInfo=true
+Writing chunk 1
+Set genome to 1
+
+Loaded Reference:	0.025 seconds.
+Loading index for chunk 1-1, build 1
+No index available; generating from reference genome: /home/jakob_jung/prevotella_experiments/metatranscriptomics_2023_04/scripts/ref/index/1/chr1_index_k12_c7_b1.block
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	2.289 seconds.
+Analyzed Index:   	0.842 seconds.
+Started output stream:	0.129 seconds.
+Cleared Memory:    	0.127 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	39786238	(2411453800 bases)
+
+Mapping:          	1980.989 seconds.
+Reads/sec:       	20084.03
+kBases/sec:      	1217.30
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.5464% 	  3400280 	 10.1191% 	   244017413
+unambiguous:     	  5.8294% 	  2319284 	  8.0033% 	   192994703
+ambiguous:       	  2.7170% 	  1080996 	  2.1158% 	    51022710
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2880% 	   114573 	  0.2098% 	     5060391
+semiperfect site:	  0.2880% 	   114573 	  0.2098% 	     5060391
+
+Match Rate:      	      NA 	       NA 	 28.6598% 	   227087867
+Error Rate:      	 12.6912% 	  3285362 	 71.3378% 	   565248866
+Sub Rate:        	 12.5666% 	  3253101 	  2.0902% 	    16561957
+Del Rate:        	  1.3784% 	   356818 	 69.2035% 	   548338130
+Ins Rate:        	  0.2989% 	    77385 	  0.0440% 	      348779
+N Rate:          	  0.0726% 	    18782 	  0.0024% 	       18810
+
+Total time:     	1985.061 seconds.
+Starting mapping for sample: 3_CON_2_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/3_CON_2_1_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/3_CON_2_1_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.142 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.312 seconds.
+Analyzed Index:   	0.780 seconds.
+Started output stream:	0.028 seconds.
+Cleared Memory:    	0.107 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	26100108	(1706918534 bases)
+
+Mapping:          	1349.275 seconds.
+Reads/sec:       	19343.81
+kBases/sec:      	1265.06
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 22.8799% 	  5971682 	 28.6453% 	   488952485
+unambiguous:     	 18.1435% 	  4735472 	 23.8811% 	   407630957
+ambiguous:       	  4.7364% 	  1236210 	  4.7642% 	    81321528
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.5989% 	   156324 	  0.6527% 	    11140764
+semiperfect site:	  0.5989% 	   156324 	  0.6527% 	    11140764
+
+Match Rate:      	      NA 	       NA 	 32.7408% 	   456138140
+Error Rate:      	 31.3919% 	  5814498 	 67.2564% 	   937001269
+Sub Rate:        	 31.1414% 	  5768094 	  2.3002% 	    32045583
+Del Rate:        	  3.6565% 	   677273 	 64.9038% 	   904225770
+Ins Rate:        	  0.8714% 	   161405 	  0.0524% 	      729916
+N Rate:          	  0.2095% 	    38798 	  0.0028% 	       38846
+
+Total time:     	1350.747 seconds.
+Starting mapping for sample: 4_CON_2_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/4_CON_2_2_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/4_CON_2_2_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.281 seconds.
+Analyzed Index:   	0.789 seconds.
+Started output stream:	0.034 seconds.
+Cleared Memory:    	0.110 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	19834812	(1325186154 bases)
+
+Mapping:          	1166.397 seconds.
+Reads/sec:       	17005.19
+kBases/sec:      	1136.14
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 36.4675% 	  7233260 	 45.5150% 	   603158565
+unambiguous:     	 29.2080% 	  5793347 	 37.7009% 	   499607480
+ambiguous:       	  7.2595% 	  1439913 	  7.8141% 	   103551085
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.6276% 	   124483 	  0.6477% 	     8583166
+semiperfect site:	  0.6276% 	   124483 	  0.6477% 	     8583166
+
+Match Rate:      	      NA 	       NA 	 32.9151% 	   562702282
+Error Rate:      	 43.8729% 	  7108164 	 67.0820% 	  1146804672
+Sub Rate:        	 43.5542% 	  7056523 	  2.3099% 	    39488427
+Del Rate:        	  5.0423% 	   816939 	 64.7184% 	  1106396910
+Ins Rate:        	  1.2436% 	   201492 	  0.0538% 	      919335
+N Rate:          	  0.2992% 	    48478 	  0.0028% 	       48521
+
+Total time:     	1167.809 seconds.
+Starting mapping for sample: 5_PNA_0_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/5_PNA_0_1_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/5_PNA_0_1_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.281 seconds.
+Analyzed Index:   	0.787 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.121 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	28104754	(1708446969 bases)
+
+Mapping:          	1275.458 seconds.
+Reads/sec:       	22035.03
+kBases/sec:      	1339.48
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  6.5551% 	  1842290 	  7.1916% 	   122864319
+unambiguous:     	  4.0763% 	  1145626 	  5.4421% 	    92975178
+ambiguous:       	  2.4788% 	   696664 	  1.7495% 	    29889141
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2435% 	    68436 	  0.1505% 	     2570893
+semiperfect site:	  0.2435% 	    68436 	  0.1505% 	     2570893
+
+Match Rate:      	      NA 	       NA 	 26.1594% 	   113975286
+Error Rate:      	 10.2275% 	  1773683 	 73.8385% 	   321710602
+Sub Rate:        	 10.0808% 	  1748240 	  1.9968% 	     8700060
+Del Rate:        	  1.1083% 	   192211 	 71.8004% 	   312830743
+Ins Rate:        	  0.2326% 	    40346 	  0.0413% 	      179799
+N Rate:          	  0.0528% 	     9163 	  0.0021% 	        9174
+
+Total time:     	1276.874 seconds.
+Starting mapping for sample: 6_PNA_0_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/6_PNA_0_2_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/6_PNA_0_2_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.279 seconds.
+Analyzed Index:   	0.823 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.140 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	22209004	(1392016028 bases)
+
+Mapping:          	991.789 seconds.
+Reads/sec:       	22392.88
+kBases/sec:      	1403.54
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  6.9336% 	  1539885 	  7.6076% 	   105899248
+unambiguous:     	  4.4239% 	   982511 	  5.8601% 	    81573021
+ambiguous:       	  2.5097% 	   557374 	  1.7476% 	    24326227
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2185% 	    48524 	  0.1524% 	     2121600
+semiperfect site:	  0.2185% 	    48524 	  0.1524% 	     2121600
+
+Match Rate:      	      NA 	       NA 	 27.5625% 	    98332360
+Error Rate:      	 11.3027% 	  1491195 	 72.4353% 	   258421231
+Sub Rate:        	 11.1530% 	  1471446 	  2.0772% 	     7410671
+Del Rate:        	  1.2412% 	   163750 	 70.3165% 	   250862156
+Ins Rate:        	  0.2487% 	    32811 	  0.0416% 	      148404
+N Rate:          	  0.0592% 	     7813 	  0.0022% 	        7813
+
+Total time:     	993.261 seconds.
+Starting mapping for sample: 7_PNA_2_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/7_PNA_2_1_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/7_PNA_2_1_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.121 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.267 seconds.
+Analyzed Index:   	0.842 seconds.
+Started output stream:	0.028 seconds.
+Cleared Memory:    	0.131 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	26094996	(1639770605 bases)
+
+Mapping:          	1454.027 seconds.
+Reads/sec:       	17946.71
+kBases/sec:      	1127.74
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 24.9308% 	  6505679 	 31.8989% 	   523068057
+unambiguous:     	 18.9743% 	  4951333 	 25.7190% 	   421732588
+ambiguous:       	  5.9565% 	  1554346 	  6.1799% 	   101335469
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.5378% 	   140330 	  0.5165% 	     8470232
+semiperfect site:	  0.5378% 	   140332 	  0.5166% 	     8470410
+
+Match Rate:      	      NA 	       NA 	 28.7678% 	   485549152
+Error Rate:      	 31.8397% 	  6364683 	 71.2298% 	  1202232909
+Sub Rate:        	 31.5840% 	  6313562 	  2.1681% 	    36593355
+Del Rate:        	  4.0616% 	   811911 	 69.0093% 	  1164755753
+Ins Rate:        	  0.9570% 	   191302 	  0.0524% 	      883801
+N Rate:          	  0.2086% 	    41701 	  0.0025% 	       41749
+
+Total time:     	1455.503 seconds.
+Starting mapping for sample: 8_PNA_2_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/8_PNA_2_2_NEB_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/8_PNA_2_2_NEB_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.278 seconds.
+Analyzed Index:   	0.774 seconds.
+Started output stream:	0.031 seconds.
+Cleared Memory:    	0.144 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	15719283	(1103290660 bases)
+
+Mapping:          	708.722 seconds.
+Reads/sec:       	22179.74
+kBases/sec:      	1556.73
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 24.0784% 	  3784956 	 28.6631% 	   316237223
+unambiguous:     	 19.4964% 	  3064699 	 24.1389% 	   266322049
+ambiguous:       	  4.5820% 	   720257 	  4.5242% 	    49915174
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.8537% 	   134202 	  0.9531% 	    10515743
+semiperfect site:	  0.8537% 	   134202 	  0.9531% 	    10515743
+
+Match Rate:      	      NA 	       NA 	 39.9913% 	   297316804
+Error Rate:      	 36.8503% 	  3649938 	 60.0053% 	   446111940
+Sub Rate:        	 36.5286% 	  3618080 	  2.4910% 	    18519578
+Del Rate:        	  3.5802% 	   354615 	 57.4638% 	   427216459
+Ins Rate:        	  0.8733% 	    86496 	  0.0506% 	      375903
+N Rate:          	  0.2515% 	    24906 	  0.0034% 	       24938
+
+Total time:     	710.153 seconds.
+Starting mapping for sample: CON_0_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_0_1_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_0_1_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.271 seconds.
+Analyzed Index:   	0.740 seconds.
+Started output stream:	0.030 seconds.
+Cleared Memory:    	0.134 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11726841	(720913678 bases)
+
+Mapping:          	486.649 seconds.
+Reads/sec:       	24097.14
+kBases/sec:      	1481.38
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 11.5133% 	  1350148 	  6.8291% 	    49231871
+unambiguous:     	  2.4536% 	   287727 	  2.9101% 	    20978989
+ambiguous:       	  9.0597% 	  1062421 	  3.9190% 	    28252882
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3703% 	    43423 	  0.1125% 	      811140
+semiperfect site:	  0.3703% 	    43423 	  0.1125% 	      811140
+
+Match Rate:      	      NA 	       NA 	 16.1425% 	    43167932
+Error Rate:      	 20.1312% 	  1306702 	 83.8568% 	   224248155
+Sub Rate:        	 19.2539% 	  1249752 	  2.2488% 	     6013738
+Del Rate:        	  2.0939% 	   135915 	 81.5899% 	   218186099
+Ins Rate:        	  0.2302% 	    14940 	  0.0181% 	       48318
+N Rate:          	  0.0290% 	     1883 	  0.0007% 	        1883
+
+Total time:     	488.024 seconds.
+Starting mapping for sample: CON_0_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_0_2_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_0_2_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.122 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.266 seconds.
+Analyzed Index:   	0.802 seconds.
+Started output stream:	0.028 seconds.
+Cleared Memory:    	0.115 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10785567	(702846001 bases)
+
+Mapping:          	387.817 seconds.
+Reads/sec:       	27810.94
+kBases/sec:      	1812.31
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.0896% 	   872512 	  3.3089% 	    23256819
+unambiguous:     	  0.5808% 	    62645 	  0.3982% 	     2798715
+ambiguous:       	  7.5088% 	   809867 	  2.9108% 	    20458104
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2500% 	    26960 	  0.0522% 	      367173
+semiperfect site:	  0.2500% 	    26960 	  0.0522% 	      367173
+
+Match Rate:      	      NA 	       NA 	 12.4494% 	    19606892
+Error Rate:      	 16.7324% 	   845547 	 87.5505% 	   137885715
+Sub Rate:        	 15.8438% 	   800646 	  2.3091% 	     3636678
+Del Rate:        	  1.6212% 	    81927 	 85.2331% 	   134236033
+Ins Rate:        	  0.1326% 	     6701 	  0.0083% 	       13004
+N Rate:          	  0.0048% 	      245 	  0.0002% 	         245
+
+Total time:     	389.239 seconds.
+Starting mapping for sample: CON_2_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_2_1_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_2_1_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.122 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.255 seconds.
+Analyzed Index:   	0.794 seconds.
+Started output stream:	0.028 seconds.
+Cleared Memory:    	0.108 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	8626396	(495021557 bases)
+
+Mapping:          	357.208 seconds.
+Reads/sec:       	24149.52
+kBases/sec:      	1385.81
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 12.5036% 	  1078613 	  7.0871% 	    35082622
+unambiguous:     	  2.9831% 	   257333 	  3.0045% 	    14873053
+ambiguous:       	  9.5205% 	   821280 	  4.0826% 	    20209569
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  1.1318% 	    97632 	  0.2832% 	     1401794
+semiperfect site:	  1.1318% 	    97632 	  0.2832% 	     1401794
+
+Match Rate:      	      NA 	       NA 	 16.3550% 	    30950746
+Error Rate:      	 19.5656% 	   980966 	 83.6444% 	   158291660
+Sub Rate:        	 18.7279% 	   938965 	  2.1684% 	     4103472
+Del Rate:        	  1.7938% 	    89935 	 81.4617% 	   154161025
+Ins Rate:        	  0.1686% 	     8451 	  0.0144% 	       27163
+N Rate:          	  0.0248% 	     1241 	  0.0007% 	        1241
+
+Total time:     	358.604 seconds.
+Starting mapping for sample: CON_2_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_2_2_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_2_2_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.121 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.284 seconds.
+Analyzed Index:   	0.752 seconds.
+Started output stream:	0.026 seconds.
+Cleared Memory:    	0.112 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	8842417	(612442633 bases)
+
+Mapping:          	288.462 seconds.
+Reads/sec:       	30653.68
+kBases/sec:      	2123.13
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 10.8743% 	   961553 	  7.4127% 	    45398509
+unambiguous:     	  3.9725% 	   351264 	  4.6731% 	    28619830
+ambiguous:       	  6.9018% 	   610289 	  2.7396% 	    16778679
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2965% 	    26214 	  0.1117% 	      683837
+semiperfect site:	  0.2965% 	    26214 	  0.1117% 	      683837
+
+Match Rate:      	      NA 	       NA 	 23.1932% 	    40898979
+Error Rate:      	 24.1549% 	   935294 	 76.8054% 	   135438636
+Sub Rate:        	 23.3168% 	   902844 	  2.5243% 	     4451391
+Del Rate:        	  2.3266% 	    90087 	 74.2551% 	   130941536
+Ins Rate:        	  0.3262% 	    12630 	  0.0259% 	       45709
+N Rate:          	  0.0628% 	     2430 	  0.0014% 	        2430
+
+Total time:     	289.850 seconds.
+Starting mapping for sample: PNA_0_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_0_1_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_0_1_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.116 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.273 seconds.
+Analyzed Index:   	0.810 seconds.
+Started output stream:	0.027 seconds.
+Cleared Memory:    	0.117 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9182210	(599637451 bases)
+
+Mapping:          	325.190 seconds.
+Reads/sec:       	28236.44
+kBases/sec:      	1843.96
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  9.3040% 	   854317 	  4.3520% 	    26095986
+unambiguous:     	  1.7377% 	   159562 	  1.4585% 	     8745514
+ambiguous:       	  7.5663% 	   694755 	  2.8935% 	    17350472
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.6740% 	    61886 	  0.1462% 	      876904
+semiperfect site:	  0.6740% 	    61886 	  0.1462% 	      876904
+
+Match Rate:      	      NA 	       NA 	 16.8367% 	    22684460
+Error Rate:      	 18.7215% 	   792422 	 83.1628% 	   112047007
+Sub Rate:        	 17.9040% 	   757821 	  2.5166% 	     3390606
+Del Rate:        	  1.7209% 	    72841 	 80.6312% 	   108636191
+Ins Rate:        	  0.1738% 	     7357 	  0.0150% 	       20210
+N Rate:          	  0.0168% 	      710 	  0.0005% 	         710
+
+Total time:     	326.620 seconds.
+Starting mapping for sample: PNA_0_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_0_2_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_0_2_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.287 seconds.
+Analyzed Index:   	0.775 seconds.
+Started output stream:	0.026 seconds.
+Cleared Memory:    	0.117 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9422329	(619187145 bases)
+
+Mapping:          	341.658 seconds.
+Reads/sec:       	27578.24
+kBases/sec:      	1812.30
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.5236% 	   803118 	  3.6753% 	    22756786
+unambiguous:     	  0.8709% 	    82060 	  0.7016% 	     4343947
+ambiguous:       	  7.6527% 	   721058 	  2.9737% 	    18412839
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3139% 	    29578 	  0.0678% 	      419871
+semiperfect site:	  0.3139% 	    29578 	  0.0678% 	      419871
+
+Match Rate:      	      NA 	       NA 	 12.1291% 	    19349958
+Error Rate:      	 17.6659% 	   773533 	 87.8707% 	   140183095
+Sub Rate:        	 16.7888% 	   735129 	  2.1256% 	     3391110
+Del Rate:        	  1.7236% 	    75471 	 85.7354% 	   136776629
+Ins Rate:        	  0.1531% 	     6702 	  0.0096% 	       15356
+N Rate:          	  0.0083% 	      362 	  0.0002% 	         362
+
+Total time:     	343.063 seconds.
+Starting mapping for sample: PNA_2_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_2_1_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_2_1_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.122 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.261 seconds.
+Analyzed Index:   	0.830 seconds.
+Started output stream:	0.028 seconds.
+Cleared Memory:    	0.115 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9420246	(599538936 bases)
+
+Mapping:          	366.222 seconds.
+Reads/sec:       	25722.77
+kBases/sec:      	1637.09
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 12.7668% 	  1202660 	  8.9579% 	    53706371
+unambiguous:     	  4.3280% 	   407711 	  5.3612% 	    32142355
+ambiguous:       	  8.4387% 	   794949 	  3.5968% 	    21564016
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.4598% 	    43318 	  0.1573% 	      943222
+semiperfect site:	  0.4598% 	    43318 	  0.1573% 	      943222
+
+Match Rate:      	      NA 	       NA 	 21.2681% 	    48166153
+Error Rate:      	 23.0934% 	  1159310 	 78.7307% 	   178302549
+Sub Rate:        	 22.2325% 	  1116093 	  2.4201% 	     5480824
+Del Rate:        	  2.2779% 	   114353 	 76.2856% 	   172765112
+Ins Rate:        	  0.3116% 	    15645 	  0.0250% 	       56613
+N Rate:          	  0.0553% 	     2777 	  0.0012% 	        2781
+
+Total time:     	367.668 seconds.
+Starting mapping for sample: PNA_2_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_2_2_RZ_DPLEX.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_2_2_RZ_DPLEX.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.279 seconds.
+Analyzed Index:   	0.730 seconds.
+Started output stream:	0.026 seconds.
+Cleared Memory:    	0.129 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	6500151	(459443984 bases)
+
+Mapping:          	203.845 seconds.
+Reads/sec:       	31887.66
+kBases/sec:      	2253.88
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  7.9139% 	   514415 	  4.5044% 	    20695239
+unambiguous:     	  2.2512% 	   146330 	  2.3805% 	    10937049
+ambiguous:       	  5.6627% 	   368085 	  2.1239% 	     9758190
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3517% 	    22861 	  0.0922% 	      423817
+semiperfect site:	  0.3517% 	    22861 	  0.0922% 	      423817
+
+Match Rate:      	      NA 	       NA 	 19.7378% 	    18401592
+Error Rate:      	 19.2217% 	   491544 	 80.2612% 	    74827563
+Sub Rate:        	 18.5047% 	   473208 	  2.4383% 	     2273236
+Del Rate:        	  1.7645% 	    45122 	 77.8020% 	    72534845
+Ins Rate:        	  0.2319% 	     5931 	  0.0209% 	       19482
+N Rate:          	  0.0363% 	      927 	  0.0010% 	         929
+
+Total time:     	205.210 seconds.
+Finished mapping. Start connecting all tab files

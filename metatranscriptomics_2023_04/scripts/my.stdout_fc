@@ -1,0 +1,1320 @@
+Start trimming
+Trimming done. Start mapping
+Starting mapping for sample: 1_CON_0_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/1_CON_0_1_NEB_DPLEX.sam outu=../data/rna_align/1_CON_0_1_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/1_CON_0_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/1_CON_0_1_NEB_DPLEX.sam, outu=../data/rna_align/1_CON_0_1_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.121 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.260 seconds.
+Analyzed Index:   	0.763 seconds.
+Started output stream:	0.049 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	39786238	(2411453800 bases)
+
+Mapping:          	1947.192 seconds.
+Reads/sec:       	20432.62
+kBases/sec:      	1238.43
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.5464% 	  3400280 	 10.1191% 	   244017413
+unambiguous:     	  5.8294% 	  2319284 	  8.0033% 	   192994703
+ambiguous:       	  2.7170% 	  1080996 	  2.1158% 	    51022710
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2880% 	   114573 	  0.2098% 	     5060391
+semiperfect site:	  0.2880% 	   114573 	  0.2098% 	     5060391
+
+Match Rate:      	      NA 	       NA 	 28.6598% 	   227087867
+Error Rate:      	 12.6912% 	  3285362 	 71.3378% 	   565248866
+Sub Rate:        	 12.5666% 	  3253101 	  2.0902% 	    16561957
+Del Rate:        	  1.3784% 	   356818 	 69.2035% 	   548338130
+Ins Rate:        	  0.2989% 	    77385 	  0.0440% 	      348779
+N Rate:          	  0.0726% 	    18782 	  0.0024% 	       18810
+
+Total time:     	1948.619 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 3_CON_2_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/3_CON_2_1_NEB_DPLEX.sam outu=../data/rna_align/3_CON_2_1_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/3_CON_2_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/3_CON_2_1_NEB_DPLEX.sam, outu=../data/rna_align/3_CON_2_1_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.260 seconds.
+Analyzed Index:   	0.762 seconds.
+Started output stream:	0.066 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.130 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	26100108	(1706918534 bases)
+
+Mapping:          	1347.028 seconds.
+Reads/sec:       	19376.07
+kBases/sec:      	1267.17
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 22.8799% 	  5971682 	 28.6453% 	   488952485
+unambiguous:     	 18.1435% 	  4735472 	 23.8811% 	   407630957
+ambiguous:       	  4.7364% 	  1236210 	  4.7642% 	    81321528
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.5989% 	   156324 	  0.6527% 	    11140764
+semiperfect site:	  0.5989% 	   156324 	  0.6527% 	    11140764
+
+Match Rate:      	      NA 	       NA 	 32.7408% 	   456138140
+Error Rate:      	 31.3919% 	  5814498 	 67.2564% 	   937001269
+Sub Rate:        	 31.1414% 	  5768094 	  2.3002% 	    32045583
+Del Rate:        	  3.6565% 	   677273 	 64.9038% 	   904225770
+Ins Rate:        	  0.8714% 	   161405 	  0.0524% 	      729916
+N Rate:          	  0.2095% 	    38798 	  0.0028% 	       38846
+
+Total time:     	1348.452 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 4_CON_2_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/4_CON_2_2_NEB_DPLEX.sam outu=../data/rna_align/4_CON_2_2_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/4_CON_2_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/4_CON_2_2_NEB_DPLEX.sam, outu=../data/rna_align/4_CON_2_2_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.279 seconds.
+Analyzed Index:   	0.765 seconds.
+Started output stream:	0.075 seconds.
+Started output stream:	0.000 seconds.
+Cleared Memory:    	0.114 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	19834812	(1325186154 bases)
+
+Mapping:          	1155.926 seconds.
+Reads/sec:       	17159.24
+kBases/sec:      	1146.43
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 36.4675% 	  7233260 	 45.5150% 	   603158565
+unambiguous:     	 29.2080% 	  5793347 	 37.7009% 	   499607480
+ambiguous:       	  7.2595% 	  1439913 	  7.8141% 	   103551085
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.6276% 	   124483 	  0.6477% 	     8583166
+semiperfect site:	  0.6276% 	   124483 	  0.6477% 	     8583166
+
+Match Rate:      	      NA 	       NA 	 32.9151% 	   562702282
+Error Rate:      	 43.8729% 	  7108164 	 67.0820% 	  1146804672
+Sub Rate:        	 43.5542% 	  7056523 	  2.3099% 	    39488427
+Del Rate:        	  5.0423% 	   816939 	 64.7184% 	  1106396910
+Ins Rate:        	  1.2436% 	   201492 	  0.0538% 	      919335
+N Rate:          	  0.2992% 	    48478 	  0.0028% 	       48521
+
+Total time:     	1157.361 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 5_PNA_0_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/5_PNA_0_1_NEB_DPLEX.sam outu=../data/rna_align/5_PNA_0_1_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/5_PNA_0_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/5_PNA_0_1_NEB_DPLEX.sam, outu=../data/rna_align/5_PNA_0_1_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.120 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.281 seconds.
+Analyzed Index:   	0.763 seconds.
+Started output stream:	0.039 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.129 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	28104754	(1708446969 bases)
+
+Mapping:          	1273.137 seconds.
+Reads/sec:       	22075.21
+kBases/sec:      	1341.92
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  6.5551% 	  1842290 	  7.1916% 	   122864319
+unambiguous:     	  4.0763% 	  1145626 	  5.4421% 	    92975178
+ambiguous:       	  2.4788% 	   696664 	  1.7495% 	    29889141
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2435% 	    68436 	  0.1505% 	     2570893
+semiperfect site:	  0.2435% 	    68436 	  0.1505% 	     2570893
+
+Match Rate:      	      NA 	       NA 	 26.1594% 	   113975286
+Error Rate:      	 10.2275% 	  1773683 	 73.8385% 	   321710602
+Sub Rate:        	 10.0808% 	  1748240 	  1.9968% 	     8700060
+Del Rate:        	  1.1083% 	   192211 	 71.8004% 	   312830743
+Ins Rate:        	  0.2326% 	    40346 	  0.0413% 	      179799
+N Rate:          	  0.0528% 	     9163 	  0.0021% 	        9174
+
+Total time:     	1274.558 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 6_PNA_0_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/6_PNA_0_2_NEB_DPLEX.sam outu=../data/rna_align/6_PNA_0_2_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/6_PNA_0_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/6_PNA_0_2_NEB_DPLEX.sam, outu=../data/rna_align/6_PNA_0_2_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.120 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.275 seconds.
+Analyzed Index:   	0.786 seconds.
+Started output stream:	0.028 seconds.
+Started output stream:	0.000 seconds.
+Cleared Memory:    	0.129 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	22209004	(1392016028 bases)
+
+Mapping:          	982.409 seconds.
+Reads/sec:       	22606.69
+kBases/sec:      	1416.94
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  6.9336% 	  1539885 	  7.6076% 	   105899248
+unambiguous:     	  4.4239% 	   982511 	  5.8601% 	    81573021
+ambiguous:       	  2.5097% 	   557374 	  1.7476% 	    24326227
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2185% 	    48524 	  0.1524% 	     2121600
+semiperfect site:	  0.2185% 	    48524 	  0.1524% 	     2121600
+
+Match Rate:      	      NA 	       NA 	 27.5625% 	    98332360
+Error Rate:      	 11.3027% 	  1491195 	 72.4353% 	   258421231
+Sub Rate:        	 11.1530% 	  1471446 	  2.0772% 	     7410671
+Del Rate:        	  1.2412% 	   163750 	 70.3165% 	   250862156
+Ins Rate:        	  0.2487% 	    32811 	  0.0416% 	      148404
+N Rate:          	  0.0592% 	     7813 	  0.0022% 	        7813
+
+Total time:     	983.834 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 7_PNA_2_1_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/7_PNA_2_1_NEB_DPLEX.sam outu=../data/rna_align/7_PNA_2_1_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/7_PNA_2_1_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/7_PNA_2_1_NEB_DPLEX.sam, outu=../data/rna_align/7_PNA_2_1_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.256 seconds.
+Analyzed Index:   	0.774 seconds.
+Started output stream:	0.027 seconds.
+Started output stream:	0.000 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	26094996	(1639770605 bases)
+
+Mapping:          	1436.265 seconds.
+Reads/sec:       	18168.65
+kBases/sec:      	1141.69
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 24.9308% 	  6505679 	 31.8989% 	   523068057
+unambiguous:     	 18.9743% 	  4951333 	 25.7190% 	   421732588
+ambiguous:       	  5.9565% 	  1554346 	  6.1799% 	   101335469
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.5378% 	   140330 	  0.5165% 	     8470232
+semiperfect site:	  0.5378% 	   140332 	  0.5166% 	     8470410
+
+Match Rate:      	      NA 	       NA 	 28.7678% 	   485549152
+Error Rate:      	 31.8397% 	  6364683 	 71.2298% 	  1202232909
+Sub Rate:        	 31.5840% 	  6313562 	  2.1681% 	    36593355
+Del Rate:        	  4.0616% 	   811911 	 69.0093% 	  1164755753
+Ins Rate:        	  0.9570% 	   191302 	  0.0524% 	      883801
+N Rate:          	  0.2086% 	    41701 	  0.0025% 	       41749
+
+Total time:     	1437.667 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: 8_PNA_2_2_NEB_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/8_PNA_2_2_NEB_DPLEX.sam outu=../data/rna_align/8_PNA_2_2_NEB_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/8_PNA_2_2_NEB_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/8_PNA_2_2_NEB_DPLEX.sam, outu=../data/rna_align/8_PNA_2_2_NEB_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.282 seconds.
+Analyzed Index:   	0.788 seconds.
+Started output stream:	0.034 seconds.
+Started output stream:	0.000 seconds.
+Cleared Memory:    	0.117 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	15719283	(1103290660 bases)
+
+Mapping:          	716.206 seconds.
+Reads/sec:       	21947.98
+kBases/sec:      	1540.46
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 24.0784% 	  3784956 	 28.6631% 	   316237223
+unambiguous:     	 19.4964% 	  3064699 	 24.1389% 	   266322049
+ambiguous:       	  4.5820% 	   720257 	  4.5242% 	    49915174
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.8537% 	   134202 	  0.9531% 	    10515743
+semiperfect site:	  0.8537% 	   134202 	  0.9531% 	    10515743
+
+Match Rate:      	      NA 	       NA 	 39.9913% 	   297316804
+Error Rate:      	 36.8503% 	  3649938 	 60.0053% 	   446111940
+Sub Rate:        	 36.5286% 	  3618080 	  2.4910% 	    18519578
+Del Rate:        	  3.5802% 	   354615 	 57.4638% 	   427216459
+Ins Rate:        	  0.8733% 	    86496 	  0.0506% 	      375903
+N Rate:          	  0.2515% 	    24906 	  0.0034% 	       24938
+
+Total time:     	717.632 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: CON_0_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_0_1_RZ_DPLEX.sam outu=../data/rna_align/CON_0_1_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_0_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_0_1_RZ_DPLEX.sam, outu=../data/rna_align/CON_0_1_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.116 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.281 seconds.
+Analyzed Index:   	0.778 seconds.
+Started output stream:	0.026 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.144 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11726841	(720913678 bases)
+
+Mapping:          	493.256 seconds.
+Reads/sec:       	23774.35
+kBases/sec:      	1461.54
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 11.5133% 	  1350148 	  6.8291% 	    49231871
+unambiguous:     	  2.4536% 	   287727 	  2.9101% 	    20978989
+ambiguous:       	  9.0597% 	  1062421 	  3.9190% 	    28252882
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3703% 	    43423 	  0.1125% 	      811140
+semiperfect site:	  0.3703% 	    43423 	  0.1125% 	      811140
+
+Match Rate:      	      NA 	       NA 	 16.1425% 	    43167932
+Error Rate:      	 20.1312% 	  1306702 	 83.8568% 	   224248155
+Sub Rate:        	 19.2539% 	  1249752 	  2.2488% 	     6013738
+Del Rate:        	  2.0939% 	   135915 	 81.5899% 	   218186099
+Ins Rate:        	  0.2302% 	    14940 	  0.0181% 	       48318
+N Rate:          	  0.0290% 	     1883 	  0.0007% 	        1883
+
+Total time:     	494.694 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: CON_0_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_0_2_RZ_DPLEX.sam outu=../data/rna_align/CON_0_2_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_0_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_0_2_RZ_DPLEX.sam, outu=../data/rna_align/CON_0_2_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.114 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.267 seconds.
+Analyzed Index:   	0.762 seconds.
+Started output stream:	0.027 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.129 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10785567	(702846001 bases)
+
+Mapping:          	379.915 seconds.
+Reads/sec:       	28389.42
+kBases/sec:      	1850.01
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.0896% 	   872512 	  3.3089% 	    23256819
+unambiguous:     	  0.5808% 	    62645 	  0.3982% 	     2798715
+ambiguous:       	  7.5088% 	   809867 	  2.9108% 	    20458104
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2500% 	    26960 	  0.0522% 	      367173
+semiperfect site:	  0.2500% 	    26960 	  0.0522% 	      367173
+
+Match Rate:      	      NA 	       NA 	 12.4494% 	    19606892
+Error Rate:      	 16.7324% 	   845547 	 87.5505% 	   137885715
+Sub Rate:        	 15.8438% 	   800646 	  2.3091% 	     3636678
+Del Rate:        	  1.6212% 	    81927 	 85.2331% 	   134236033
+Ins Rate:        	  0.1326% 	     6701 	  0.0083% 	       13004
+N Rate:          	  0.0048% 	      245 	  0.0002% 	         245
+
+Total time:     	381.301 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: CON_2_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_2_1_RZ_DPLEX.sam outu=../data/rna_align/CON_2_1_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_2_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_2_1_RZ_DPLEX.sam, outu=../data/rna_align/CON_2_1_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.115 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.265 seconds.
+Analyzed Index:   	0.756 seconds.
+Started output stream:	0.027 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.128 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	8626396	(495021557 bases)
+
+Mapping:          	354.976 seconds.
+Reads/sec:       	24301.34
+kBases/sec:      	1394.52
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 12.5036% 	  1078613 	  7.0871% 	    35082622
+unambiguous:     	  2.9831% 	   257333 	  3.0045% 	    14873053
+ambiguous:       	  9.5205% 	   821280 	  4.0826% 	    20209569
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  1.1318% 	    97632 	  0.2832% 	     1401794
+semiperfect site:	  1.1318% 	    97632 	  0.2832% 	     1401794
+
+Match Rate:      	      NA 	       NA 	 16.3550% 	    30950746
+Error Rate:      	 19.5656% 	   980966 	 83.6444% 	   158291660
+Sub Rate:        	 18.7279% 	   938965 	  2.1684% 	     4103472
+Del Rate:        	  1.7938% 	    89935 	 81.4617% 	   154161025
+Ins Rate:        	  0.1686% 	     8451 	  0.0144% 	       27163
+N Rate:          	  0.0248% 	     1241 	  0.0007% 	        1241
+
+Total time:     	356.359 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: CON_2_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/CON_2_2_RZ_DPLEX.sam outu=../data/rna_align/CON_2_2_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/CON_2_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/CON_2_2_RZ_DPLEX.sam, outu=../data/rna_align/CON_2_2_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.122 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.261 seconds.
+Analyzed Index:   	0.835 seconds.
+Started output stream:	0.028 seconds.
+Started output stream:	0.000 seconds.
+Cleared Memory:    	0.108 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	8842417	(612442633 bases)
+
+Mapping:          	289.200 seconds.
+Reads/sec:       	30575.39
+kBases/sec:      	2117.71
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 10.8743% 	   961553 	  7.4127% 	    45398509
+unambiguous:     	  3.9725% 	   351264 	  4.6731% 	    28619830
+ambiguous:       	  6.9018% 	   610289 	  2.7396% 	    16778679
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.2965% 	    26214 	  0.1117% 	      683837
+semiperfect site:	  0.2965% 	    26214 	  0.1117% 	      683837
+
+Match Rate:      	      NA 	       NA 	 23.1932% 	    40898979
+Error Rate:      	 24.1549% 	   935294 	 76.8054% 	   135438636
+Sub Rate:        	 23.3168% 	   902844 	  2.5243% 	     4451391
+Del Rate:        	  2.3266% 	    90087 	 74.2551% 	   130941536
+Ins Rate:        	  0.3262% 	    12630 	  0.0259% 	       45709
+N Rate:          	  0.0628% 	     2430 	  0.0014% 	        2430
+
+Total time:     	290.644 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_0_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_0_1_RZ_DPLEX.sam outu=../data/rna_align/PNA_0_1_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_0_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_0_1_RZ_DPLEX.sam, outu=../data/rna_align/PNA_0_1_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.116 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.258 seconds.
+Analyzed Index:   	0.806 seconds.
+Started output stream:	0.030 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.115 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9182210	(599637451 bases)
+
+Mapping:          	327.516 seconds.
+Reads/sec:       	28035.92
+kBases/sec:      	1830.87
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  9.3040% 	   854317 	  4.3520% 	    26095986
+unambiguous:     	  1.7377% 	   159562 	  1.4585% 	     8745514
+ambiguous:       	  7.5663% 	   694755 	  2.8935% 	    17350472
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.6740% 	    61886 	  0.1462% 	      876904
+semiperfect site:	  0.6740% 	    61886 	  0.1462% 	      876904
+
+Match Rate:      	      NA 	       NA 	 16.8367% 	    22684460
+Error Rate:      	 18.7215% 	   792422 	 83.1628% 	   112047007
+Sub Rate:        	 17.9040% 	   757821 	  2.5166% 	     3390606
+Del Rate:        	  1.7209% 	    72841 	 80.6312% 	   108636191
+Ins Rate:        	  0.1738% 	     7357 	  0.0150% 	       20210
+N Rate:          	  0.0168% 	      710 	  0.0005% 	         710
+
+Total time:     	328.935 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_0_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_0_2_RZ_DPLEX.sam outu=../data/rna_align/PNA_0_2_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_0_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_0_2_RZ_DPLEX.sam, outu=../data/rna_align/PNA_0_2_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.123 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.270 seconds.
+Analyzed Index:   	0.762 seconds.
+Started output stream:	0.030 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.129 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9422329	(619187145 bases)
+
+Mapping:          	343.475 seconds.
+Reads/sec:       	27432.38
+kBases/sec:      	1802.72
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  8.5236% 	   803118 	  3.6753% 	    22756786
+unambiguous:     	  0.8709% 	    82060 	  0.7016% 	     4343947
+ambiguous:       	  7.6527% 	   721058 	  2.9737% 	    18412839
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3139% 	    29578 	  0.0678% 	      419871
+semiperfect site:	  0.3139% 	    29578 	  0.0678% 	      419871
+
+Match Rate:      	      NA 	       NA 	 12.1291% 	    19349958
+Error Rate:      	 17.6659% 	   773533 	 87.8707% 	   140183095
+Sub Rate:        	 16.7888% 	   735129 	  2.1256% 	     3391110
+Del Rate:        	  1.7236% 	    75471 	 85.7354% 	   136776629
+Ins Rate:        	  0.1531% 	     6702 	  0.0096% 	       15356
+N Rate:          	  0.0083% 	      362 	  0.0002% 	         362
+
+Total time:     	344.882 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_2_1_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_2_1_RZ_DPLEX.sam outu=../data/rna_align/PNA_2_1_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_2_1_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_2_1_RZ_DPLEX.sam, outu=../data/rna_align/PNA_2_1_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.117 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.282 seconds.
+Analyzed Index:   	0.800 seconds.
+Started output stream:	0.031 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.128 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9420246	(599538936 bases)
+
+Mapping:          	370.261 seconds.
+Reads/sec:       	25442.19
+kBases/sec:      	1619.23
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 12.7668% 	  1202660 	  8.9579% 	    53706371
+unambiguous:     	  4.3280% 	   407711 	  5.3612% 	    32142355
+ambiguous:       	  8.4387% 	   794949 	  3.5968% 	    21564016
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.4598% 	    43318 	  0.1573% 	      943222
+semiperfect site:	  0.4598% 	    43318 	  0.1573% 	      943222
+
+Match Rate:      	      NA 	       NA 	 21.2681% 	    48166153
+Error Rate:      	 23.0934% 	  1159310 	 78.7307% 	   178302549
+Sub Rate:        	 22.2325% 	  1116093 	  2.4201% 	     5480824
+Del Rate:        	  2.2779% 	   114353 	 76.2856% 	   172765112
+Ins Rate:        	  0.3116% 	    15645 	  0.0250% 	       56613
+N Rate:          	  0.0553% 	     2777 	  0.0012% 	        2781
+
+Total time:     	371.712 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Starting mapping for sample: PNA_2_2_RZ_DPLEX
+java -Djava.library.path=/home/jakob_jung/miniconda3/opt/bbmap-38.18/jni/ -ea -Xmx27114m -cp /home/jakob_jung/miniconda3/opt/bbmap-38.18/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/tot_seqs.fasta k=12 outm=../data/rna_align/PNA_2_2_RZ_DPLEX.sam outu=../data/rna_align/PNA_2_2_RZ_DPLEX_unmapped.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/PNA_2_2_RZ_DPLEX_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/tot_seqs.fasta, k=12, outm=../data/rna_align/PNA_2_2_RZ_DPLEX.sam, outu=../data/rna_align/PNA_2_2_RZ_DPLEX_unmapped.sam]
+Version 38.18
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.117 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.262 seconds.
+Analyzed Index:   	0.773 seconds.
+Started output stream:	0.028 seconds.
+Started output stream:	0.001 seconds.
+Cleared Memory:    	0.130 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	6500151	(459443984 bases)
+
+Mapping:          	204.966 seconds.
+Reads/sec:       	31713.29
+kBases/sec:      	2241.56
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  7.9139% 	   514415 	  4.5044% 	    20695239
+unambiguous:     	  2.2512% 	   146330 	  2.3805% 	    10937049
+ambiguous:       	  5.6627% 	   368085 	  2.1239% 	     9758190
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.3517% 	    22861 	  0.0922% 	      423817
+semiperfect site:	  0.3517% 	    22861 	  0.0922% 	      423817
+
+Match Rate:      	      NA 	       NA 	 19.7378% 	    18401592
+Error Rate:      	 19.2217% 	   491544 	 80.2612% 	    74827563
+Sub Rate:        	 18.5047% 	   473208 	  2.4383% 	     2273236
+Del Rate:        	  1.7645% 	    45122 	 77.8020% 	    72534845
+Ins Rate:        	  0.2319% 	     5931 	  0.0209% 	       19482
+N Rate:          	  0.0363% 	      927 	  0.0010% 	         929
+
+Total time:     	206.367 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+Finished mapping. Start connecting all tab files
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 16 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                           o unmapped_1.bam                                 ||
+||                                                                            ||
+||             Output file : counttable_bb.txt                                ||
+||                 Summary : counttable_bb.txt.summary                        ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 12281                                                        ||
+||    Meta-features : 12279                                                   ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 36385958                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.08 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20128426                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12601552                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 26262464                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20669119                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 19589317                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11934327                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10376693                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9913055                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7547783                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7880864                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8327893                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8619211                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8217586                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5985736                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file unmapped_1.bam...                                         ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 0                                                    ||
+||    Successfully assigned alignments : 0                                    ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/count  ||
+|| table_bb.txt.summary"                                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 16 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                           o unmapped_1.bam                                 ||
+||                                                                            ||
+||             Output file : rRNA_counttable_bb.txt                           ||
+||                 Summary : rRNA_counttable_bb.txt.summary                   ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 45                                                           ||
+||    Meta-features : 45                                                      ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 36385958                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.09 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20128426                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12601552                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 26262464                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20669119                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 19589317                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11934327                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10376693                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9913055                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7547783                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7880864                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8327893                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8619211                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8217586                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5985736                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file unmapped_1.bam...                                         ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 0                                                    ||
+||    Successfully assigned alignments : 0                                    ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/rRNA_  ||
+|| counttable_bb.txt.summary"                                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 16 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                           o unmapped_1.bam                                 ||
+||                                                                            ||
+||             Output file : tRNA_counttable_bb.txt                           ||
+||                 Summary : tRNA_counttable_bb.txt.summary                   ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 207                                                          ||
+||    Meta-features : 207                                                     ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 36385958                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.09 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20128426                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12601552                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 26262464                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 20669119                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 19589317                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11934327                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10376693                                             ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9913055                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7547783                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 7880864                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8327893                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8619211                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8217586                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5985736                                              ||
+||    Successfully assigned alignments : 0 (0.0%)                             ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file unmapped_1.bam...                                         ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 0                                                    ||
+||    Successfully assigned alignments : 0                                    ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/tRNA_  ||
+|| counttable_bb.txt.summary"                                                 ||
+||                                                                            ||
+\\============================================================================//
+

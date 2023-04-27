@@ -1,0 +1,864 @@
+Start trimming
+Trimming done. Start mapping
+Starting mapping for sample: 1_CON_0_1_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/1_CON_0_1_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 3_CON_2_1_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/3_CON_2_1_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 4_CON_2_2_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/4_CON_2_2_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 5_PNA_0_1_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/5_PNA_0_1_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 6_PNA_0_2_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/6_PNA_0_2_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 7_PNA_2_1_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/7_PNA_2_1_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: 8_PNA_2_2_NEB_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/8_PNA_2_2_NEB_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: CON_0_1_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/CON_0_1_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: CON_0_2_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/CON_0_2_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: CON_2_1_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/CON_2_1_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: CON_2_2_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/CON_2_2_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: PNA_0_1_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/PNA_0_1_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: PNA_0_2_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/PNA_0_2_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: PNA_2_1_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/PNA_2_1_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Starting mapping for sample: PNA_2_2_RZ_DPLEX
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+bamFilesList: ['../data/rna_align/PNA_2_2_RZ_DPLEX.bam']
+binLength: 1
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 1
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+Finished mapping. Start connecting all tab files
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 15 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                                                                            ||
+||             Output file : counttable_bb.txt                                ||
+||                 Summary : counttable_bb.txt.summary                        ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 12281                                                        ||
+||    Meta-features : 12279                                                   ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 17180602                                             ||
+||    Successfully assigned alignments : 12063372 (70.2%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14413133                                             ||
+||    Successfully assigned alignments : 10393947 (72.1%)                     ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12860681                                             ||
+||    Successfully assigned alignments : 9366474 (72.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12115288                                             ||
+||    Successfully assigned alignments : 8499755 (70.2%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9817050                                              ||
+||    Successfully assigned alignments : 6855604 (69.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14822228                                             ||
+||    Successfully assigned alignments : 10633868 (71.7%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8821437                                              ||
+||    Successfully assigned alignments : 6390921 (72.4%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 859636                                               ||
+||    Successfully assigned alignments : 631974 (73.5%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 490921                                               ||
+||    Successfully assigned alignments : 402233 (81.9%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 794141                                               ||
+||    Successfully assigned alignments : 622740 (78.4%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 583188                                               ||
+||    Successfully assigned alignments : 504288 (86.5%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 407782                                               ||
+||    Successfully assigned alignments : 305348 (74.9%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 366105                                               ||
+||    Successfully assigned alignments : 261182 (71.3%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 749062                                               ||
+||    Successfully assigned alignments : 638878 (85.3%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 247025                                               ||
+||    Successfully assigned alignments : 203455 (82.4%)                       ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/count  ||
+|| table_bb.txt.summary"                                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 15 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                                                                            ||
+||             Output file : rRNA_counttable_bb.txt                           ||
+||                 Summary : rRNA_counttable_bb.txt.summary                   ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 45                                                           ||
+||    Meta-features : 45                                                      ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 17180602                                             ||
+||    Successfully assigned alignments : 1783159 (10.4%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14413133                                             ||
+||    Successfully assigned alignments : 1558316 (10.8%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12860681                                             ||
+||    Successfully assigned alignments : 1575710 (12.3%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12115288                                             ||
+||    Successfully assigned alignments : 1111944 (9.2%)                       ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9817050                                              ||
+||    Successfully assigned alignments : 905491 (9.2%)                        ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14822228                                             ||
+||    Successfully assigned alignments : 1798100 (12.1%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8821437                                              ||
+||    Successfully assigned alignments : 885535 (10.0%)                       ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 859636                                               ||
+||    Successfully assigned alignments : 128131 (14.9%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 490921                                               ||
+||    Successfully assigned alignments : 45194 (9.2%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 794141                                               ||
+||    Successfully assigned alignments : 77711 (9.8%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 583188                                               ||
+||    Successfully assigned alignments : 15266 (2.6%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 407782                                               ||
+||    Successfully assigned alignments : 58628 (14.4%)                        ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 366105                                               ||
+||    Successfully assigned alignments : 69341 (18.9%)                        ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 749062                                               ||
+||    Successfully assigned alignments : 26199 (3.5%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 247025                                               ||
+||    Successfully assigned alignments : 13078 (5.3%)                         ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/rRNA_  ||
+|| counttable_bb.txt.summary"                                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 15 BAM files                                     ||
+||                           o 1_CON_0_1_NEB_DPLEX.bam                        ||
+||                           o 3_CON_2_1_NEB_DPLEX.bam                        ||
+||                           o 4_CON_2_2_NEB_DPLEX.bam                        ||
+||                           o 5_PNA_0_1_NEB_DPLEX.bam                        ||
+||                           o 6_PNA_0_2_NEB_DPLEX.bam                        ||
+||                           o 7_PNA_2_1_NEB_DPLEX.bam                        ||
+||                           o 8_PNA_2_2_NEB_DPLEX.bam                        ||
+||                           o CON_0_1_RZ_DPLEX.bam                           ||
+||                           o CON_0_2_RZ_DPLEX.bam                           ||
+||                           o CON_2_1_RZ_DPLEX.bam                           ||
+||                           o CON_2_2_RZ_DPLEX.bam                           ||
+||                           o PNA_0_1_RZ_DPLEX.bam                           ||
+||                           o PNA_0_2_RZ_DPLEX.bam                           ||
+||                           o PNA_2_1_RZ_DPLEX.bam                           ||
+||                           o PNA_2_2_RZ_DPLEX.bam                           ||
+||                                                                            ||
+||             Output file : tRNA_counttable_bb.txt                           ||
+||                 Summary : tRNA_counttable_bb.txt.summary                   ||
+||              Annotation : tot_seqs.gff (GTF)                               ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file tot_seqs.gff ...                                      ||
+||    Features : 207                                                          ||
+||    Meta-features : 207                                                     ||
+||    Chromosomes/contigs : 3                                                 ||
+||                                                                            ||
+|| Process BAM file 1_CON_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 17180602                                             ||
+||    Successfully assigned alignments : 27840 (0.2%)                         ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 3_CON_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14413133                                             ||
+||    Successfully assigned alignments : 61418 (0.4%)                         ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 4_CON_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12860681                                             ||
+||    Successfully assigned alignments : 43887 (0.3%)                         ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 5_PNA_0_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12115288                                             ||
+||    Successfully assigned alignments : 24580 (0.2%)                         ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 6_PNA_0_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9817050                                              ||
+||    Successfully assigned alignments : 18952 (0.2%)                         ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 7_PNA_2_1_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 14822228                                             ||
+||    Successfully assigned alignments : 53032 (0.4%)                         ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 8_PNA_2_2_NEB_DPLEX.bam...                                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8821437                                              ||
+||    Successfully assigned alignments : 27602 (0.3%)                         ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 859636                                               ||
+||    Successfully assigned alignments : 23554 (2.7%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 490921                                               ||
+||    Successfully assigned alignments : 6701 (1.4%)                          ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 794141                                               ||
+||    Successfully assigned alignments : 19888 (2.5%)                         ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CON_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 583188                                               ||
+||    Successfully assigned alignments : 5087 (0.9%)                          ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 407782                                               ||
+||    Successfully assigned alignments : 8842 (2.2%)                          ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_0_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 366105                                               ||
+||    Successfully assigned alignments : 9073 (2.5%)                          ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_1_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 749062                                               ||
+||    Successfully assigned alignments : 7259 (1.0%)                          ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file PNA_2_2_RZ_DPLEX.bam...                                   ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 247025                                               ||
+||    Successfully assigned alignments : 3426 (1.4%)                          ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/tRNA_  ||
+|| counttable_bb.txt.summary"                                                 ||
+||                                                                            ||
+\\============================================================================//
+
