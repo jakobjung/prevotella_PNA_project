@@ -1,0 +1,31 @@
+# portho_b_theta.proteinortho.tsv statistics:
+# number of groups that contains at least p% species:
+# p	species	groups	genes in groups
+0%	0	4550 (100%)	9194 (100%)	
+50%	1	4550 (100%)	9194 (100%)	
+100%	2	4550 (100%)	9194 (100%)	
+# NOTE: p=100% correspond to the core proteome and p=0% to all groups
+# number of groups for each input species:
+b_theta_cds.fasta	4550	100%
+b_theta_cds_orig.fasta	4550	100%
+
+# ----------------------------------
+# graph file statistics:
+
+# The adjacency matrix, the number of edges between 2 species
+# file	b_theta_cds.fasta	b_theta_cds_orig.fasta	
+b_theta_cds.fasta	0	4860
+b_theta_cds_orig.fasta	4860	0
+
+# file	average number of edges
+b_theta_cds.fasta	2430	
+b_theta_cds_orig.fasta	2430	
+
+# The 2-path matrix, the number of paths between 2 species of length 2
+# file	b_theta_cds.fasta	b_theta_cds_orig.fasta	
+b_theta_cds.fasta(0)	23619600	0
+b_theta_cds_orig.fasta(1)	0	23619600
+
+# file	average number of 2-paths
+b_theta_cds.fasta(0)	11809800
+b_theta_cds_orig.fasta(1)	11809800

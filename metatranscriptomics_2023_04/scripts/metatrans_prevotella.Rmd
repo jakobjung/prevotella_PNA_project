@@ -33,54 +33,14 @@ library(ComplexHeatmap)
 ## percentages of mapped read types
 Here I show the distribution of different reads (oligos, rRNA, tRNA) to get an idea on how the rRNA depletion worked out.
 First I import total counts per rRNA, mRNA and tRNA and look at the total counts of our ologos:
-```{r}
-cds_counts <- unlist(read.delim("../data/rna_align/counttable.txt.summary", 
-                                      row.names = 1)[1,])
-rrna_counts <- unlist(read.delim("../data/rna_align/rRNA_counttable.txt.summary", 
-                                    row.names = 1)[1,])
-trna_counts <- unlist(read.delim("../data/rna_align/tRNA_counttable.txt.summary", 
-                                    row.names = 1)[1,])
-```
 
-Now I create a dataframe and plot a stacked barplot of the data: 
-```{r}
-df_rnatypes <- data.frame(
-  rna_type = c(rep("rRNA", length(rrna_counts)), 
-               rep("tRNA", length(trna_counts)),
-               rep("mRNA", length(cds_counts))),
-  counts = c(rrna_counts,  trna_counts, cds_counts), 
-  sample = rep(names(rrna_counts), 3)
-)
-
-df_rnatypes$sample <- gsub(".*.rna_align\\.(.+)\\.fq\\.gz\\.bam", "\\1", df_rnatypes$sample)
-df_rnatypes$condition <- gsub("(.+_\\d+)_\\d", "\\1", df_rnatypes$sample)
-df_rnatypes <- df_rnatypes[order(df_rnatypes$sample),]
-df_rnatypes$norm_fac <- ave(df_rnatypes$counts, df_rnatypes$sample, FUN=sum) / 10000000
-df_rnatypes$cpm_counts <- df_rnatypes$counts / df_rnatypes$norm_fac
-df_rnatypes$rna_type <- factor(df_rnatypes$rna_type, levels = c("tRNA", "rRNA", "mRNA"))
-
-write_csv(df_rnatypes, "../analysis/rna_types/rna_types.csv")
-
-g <- ggplot(df_rnatypes) + 
-  aes(x = sample, y = counts, fill = rna_type) + 
-  geom_bar(stat = "identity", position = "stack") + 
-  scale_fill_manual(values = met.brewer("Hokusai3")[c(1,3,5)]) + 
-  theme_pubr() +
-  scale_y_continuous(labels = scales::unit_format(unit = "", scale = 1e-6), name = "reads (in million)",
-                     breaks = seq(0,10000000, by = 1000000)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))
-
-g
-ggsave("../analysis/rna_types/rnatypes_new.svg", plot = g, width = 15, height=6)
-ggsave("../analysis/rna_types/rnatypes_new.png", plot = g, width = 15, height = 6)
-```
 
 ## Data import
 I start with importing count data (genewisecounts):
 ```{r}
 # import:
 GenewiseCounts <- read.delim(
-    "../data/rna_align/counttable.txt",
+    "./metatranscriptomics_2023_04/data/rna_align/counttable_bb.txt",
     sep = "\t", row.names = 1, header = T, comment.char = "#")
 dim(GenewiseCounts)
 head(GenewiseCounts[,1:6])

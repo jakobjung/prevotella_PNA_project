@@ -1,9 +1,11 @@
 ```bash
-sed -E "s/>.+\\[gene=([^]]+)(.*)\\[locus_tag=([^]]+).*/>b_ovatus|\\1|\\3/" b_ovatus.fasta | sed -E "s/>.+\\[locus_tag=([^]]+).*/>b_ovatus|\\1|\\1/" > database_transcriptomics_flame.fasta
+sed -E "s/.*locus_tag=([^]]+).*/>\\1/" b_thera_cds.fna > b_theta_cds.fasta
 
-sed -E "s/>.+\\[gene=([^]]+)(.*)\\[locus_tag=([^]]+).*/>b_theta|\\1|\\3/" b_theta.fasta | sed -E "s/>.+\\[locus_tag=([^]]+).*/>b_theta|\\1|\\1/" >> database_transcriptomics_flame.fasta
 
-sed -E "s/>.+\\[gene=([^]]+)(.*)\\[locus_tag=([^]]+).*/>b_theta|\\1|\\3/" p_copri.fasta | sed -E "s/>.+\\[locus_tag=([^]]+).*/>p_copri|\\1|\\1/" >> database_transcriptomics_flame.fasta 
+sed -E "s/.*locus_tag=([^]]+).*/>\\1/" b_theta_only_cds_original.fasta >  b_theta_cds_orig.fasta
+
+
+proteinortho6.pl --project=portho_b_theta ./b_theta_cds_orig.fasta ./b_theta_cds.fasta --p=blastn
 
 
 
