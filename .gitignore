@@ -16,3 +16,5 @@
 *.fasta
 *.gff*
 *.fna
+*xlsx
+*.csv
