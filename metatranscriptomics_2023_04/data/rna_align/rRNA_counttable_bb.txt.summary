@@ -1,5 +1,5 @@
 Status	../data/rna_align/1_CON_0_1_NEB_DPLEX.bam	../data/rna_align/3_CON_2_1_NEB_DPLEX.bam	../data/rna_align/4_CON_2_2_NEB_DPLEX.bam	../data/rna_align/5_PNA_0_1_NEB_DPLEX.bam	../data/rna_align/6_PNA_0_2_NEB_DPLEX.bam	../data/rna_align/7_PNA_2_1_NEB_DPLEX.bam	../data/rna_align/8_PNA_2_2_NEB_DPLEX.bam	../data/rna_align/CON_0_1_RZ_DPLEX.bam	../data/rna_align/CON_0_2_RZ_DPLEX.bam	../data/rna_align/CON_2_1_RZ_DPLEX.bam	../data/rna_align/CON_2_2_RZ_DPLEX.bam	../data/rna_align/PNA_0_1_RZ_DPLEX.bam	../data/rna_align/PNA_0_2_RZ_DPLEX.bam	../data/rna_align/PNA_2_1_RZ_DPLEX.bam	../data/rna_align/PNA_2_2_RZ_DPLEX.bam
-Assigned	1783159	1558316	1575710	1111944	905491	1798100	885535	128131	45194	77711	15266	58628	69341	26199	13078
+Assigned	1794499	1564318	1578411	1119702	911668	1802918	888663	128141	45199	77707	15283	58616	69335	26197	13079
 Unassigned_Unmapped	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -10,6 +10,6 @@ Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_MultiMapping	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-Unassigned_NoFeatures	15397337	12854756	11284911	11003276	8911524	13024047	7935860	731491	445723	716420	567922	349151	296762	722863	233947
+Unassigned_NoFeatures	15385997	12848754	11282210	10995518	8905347	13019229	7932732	731481	445718	716424	567905	349163	296768	722865	233946
 Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 Unassigned_Ambiguity	106	61	60	68	35	81	42	14	4	10	0	3	2	0	0

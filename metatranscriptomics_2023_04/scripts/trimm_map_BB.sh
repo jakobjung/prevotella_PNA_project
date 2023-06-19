@@ -4,7 +4,7 @@ main(){
     # sequences are stored:
     PROJECT=../data
     echo "Start trimming"
-    #rename_trim_rna_libs
+    rename_trim_rna_libs
     echo "Trimming done. Start mapping"
     align_rna_reads_genome
     echo "Finished mapping. Start connecting all tab files"
@@ -56,9 +56,9 @@ align_rna_reads_genome(){
         #salmon quant -i $PROJECT/reference_sequences/metatranscriptome_index -l A -r $i \
 	#       --fldMean 300 --fldSD 300 --validateMappings --writeUnmappedNames --incompatPrior 0.0 --recoverOrphans --softclipOverhangs -o $DIR/$NAME
 	#fastqc $i
-        #bbmap.sh in=$i trimreaddescription=t  t=20 \
-	#		     ref=$PROJECT/reference_sequences/tot_seqs.fasta \
-	#		     k=12 outm=$DIR/$NAME.sam outu=$DIR/${NAME}_unmapped.sam
+        bbmap.sh in=$i trimreaddescription=t  t=20 \
+			     ref=$PROJECT/reference_sequences/tot_seqs.fasta \
+			     k=12 ambig=random outm=$DIR/$NAME.sam #outu=$DIR/${NAME}_unmapped.sam
 	samtools sort -O BAM -@ 40 $DIR/$NAME.sam > $DIR/$NAME.bam
 	echo  "done sorting, start indexing"
 	samtools index $DIR/$NAME.bam
